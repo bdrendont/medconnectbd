@@ -1,0 +1,1128 @@
+/* Estilo global */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+/* Barra de navegación */
+.navbar-custom {
+    background-color: #2C3E50;
+}
+
+.navbar-brand {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.fa-clock {
+    color: #F39C12;
+    margin-right: 0.5rem;
+    animation: rotateClock 4s infinite linear;
+}
+
+@keyframes rotateClock {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.close-icon {
+    font-size: 24px;
+    color: #F39C12;
+    cursor: pointer;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.close-icon:hover {
+    color: #E67E22;
+}
+
+.nav-link.btn-custom {
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #F39C12;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.nav-link.btn-custom:hover {
+    background-color: #E67E22;
+}
+
+/* Contenedor principal */
+.contenedor {
+    background-image: 
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 20%),
+        url('../img/docfondo.jpg');
+    background-position: center;
+    background-repeat: repeat; 
+    background-size: auto;
+    min-height: calc(100vh - 80px - 60px); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3rem;
+}
+
+
+/* Caja de inicio de sesión y tarjeta */
+.card {
+    border-radius: 15px; 
+    border: none; 
+    background-color: transparent; 
+}
+
+.card-body {
+    background-color: #2C3E50; /* Color de fondo de la tarjeta */
+    color: white;
+    padding: 2rem 1rem 3rem 1rem; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px; 
+    border: none;
+}
+
+/* Títulos y textos */
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #F39C12;
+}
+
+.form-label, .text-bold {
+    font-weight: bold;
+}
+
+/* Botón personalizado */
+.btn-custom {
+    background-color: #F39C12;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-custom:hover {
+    background-color: #E67E22;
+    color: black;
+}
+
+/* Pie de página */
+.footer-custom {
+    background-color: #2C3E50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar flotante */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+#close-sidebar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Estilo del formulario de nueva cuenta en dos columnas */
+.new-account-form .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.new-account-form .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 10px;
+}
+
+@media (max-width: 576px) {
+    .new-account-form .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+/* Contenedor de las cartas de acceso */
+.access-cards-container {
+    min-height: calc(100vh - 160px); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Estilo de las cartas de acceso */
+.access-card {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: auto; 
+    min-height: 200px; 
+    max-height: 90vh; 
+    overflow: hidden; 
+    transition: none; 
+}
+
+.access-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.icon-card {
+    font-size: 3rem;
+    color: #F39C12;
+}
+
+.btn-custom {
+    background-color: #F39C12;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-custom:hover {
+    background-color: #E67E22;
+}
+
+.navbar-custom {
+    background-color: #2C3E50; 
+}
+
+.profile-link {
+    color: white; 
+    transition: color 0.3s; 
+}
+
+.profile-link:hover {
+    color: #F39C12; 
+}
+
+.dropdown-menu {
+    min-width: 180px; 
+    font-size: 0.9rem; 
+}
+
+.dropdown-item i {
+    color: #F39C12; 
+}
+
+/* Estilo de la tarjeta del perfil */
+.profile-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 340px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    display: none;
+    z-index: 1050;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease;
+}
+
+.profile-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 4px solid #2C3E50;
+}
+
+.profile-card h5 {
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2C3E50;
+}
+
+.profile-info {
+    text-align: left;
+    margin: 20px 0;
+    color: #555;
+}
+
+.profile-info p {
+    margin: 8px 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Botón de cierre personalizado para la tarjeta de perfil */
+.close-profile {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 16px; 
+    width: 30px;
+    height: 30px;
+    border-radius: 8px; 
+    background-color: #F39C12; 
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s; 
+    font-weight: bold; 
+    text-align: center; 
+}
+
+.close-profile:hover {
+    background-color: #E67E22; 
+    color: black;
+}
+
+/* Botón de cerrar sesión */
+.profile-card a.btn-logout {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.2);
+    text-decoration: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.profile-card a.btn-logout:hover {
+    background-color: #c0392b;
+    box-shadow: 0 6px 12px rgba(192, 57, 43, 0.3);
+}
+
+/* Estilo de la ventana de confirmación de cierre de sesión */
+.confirmation-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 340px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    display: none; 
+    z-index: 1050;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease;
+}
+
+/* Título de la ventana de confirmación */
+.confirmation-card h5 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Botones de la ventana de confirmación */
+.confirmation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Botón de confirmar */
+.btn-confirm {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.2);
+    text-decoration: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+}
+
+.btn-confirm:hover {
+    background-color: #c0392b; 
+    box-shadow: 0 6px 12px rgba(192, 57, 43, 0.3);
+}
+
+/* Botón de cancelar */
+.btn-cancel {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #2ecc71; 
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+}
+
+.btn-cancel:hover {
+    background-color: #27ae60;
+    box-shadow: 0 6px 12px rgba(46, 204, 113, 0.3);
+}
+
+/* Estilo de la tarjeta del perfil flotante */
+.profile-card {
+    background-color: #2C3E50;
+    color: #ECF0F1;
+    border-radius: 10px;
+    border: 1px solid #2C3E50;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    padding: 20px;
+    position: fixed; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilo para la imagen de perfil */
+.profile-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #F39C12;
+    margin-bottom: 15px;
+}
+
+/* Encabezado de la tarjeta */
+.profile-card h5 {
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #2C3E50;
+}
+
+/* Información del perfil */
+.profile-info p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.profile-info strong {
+    color: #F39C12;
+}
+
+/* Botón de cerrar personalizado para la tarjeta del perfil */
+.close-profile {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px; 
+    background-color: #F39C12; 
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+    text-align: center;
+}
+
+.close-profile:hover {
+    background-color: #E67E22; 
+    color: black; 
+}
+
+/* Estilo de las cartas de acceso (general) */
+.access-card {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-height: 250px; 
+    overflow: hidden; 
+    transition: box-shadow 0.3s ease;
+}
+
+.access-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+}
+
+/* Estilo para la imagen de perfil en cartas de acceso */
+.profile-image img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #F39C12;
+    margin-bottom: 15px;
+}
+
+/* Información del usuario en cartas de acceso */
+.user-info p {
+    font-size: 15px;
+    color: #ECF0F1;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Títulos en cartas de acceso */
+.card-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #F39C12;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Icono de edición */
+.edit-icon {
+    color: #F39C12;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.edit-icon:hover {
+    color: #E67E22;
+    transform: scale(1.1);
+}
+
+/* Botones personalizados */
+.btn-custom {
+    background-color: #F39C12;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-custom:hover {
+    background-color: #E67E22;
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* Estilo para las tarjetas generales */
+.card, .card-body, .access-card {
+    border: none !important;
+    box-shadow: none;
+}
+
+.card-body {
+    background-color: #2C3E50 !important;
+}
+
+/* Estilo del formulario de edición */
+.profile-edit {
+    margin-top: 20px;
+}
+
+.profile-edit form div {
+    margin-bottom: 15px;
+}
+
+.profile-edit label {
+    display: block;
+    margin-bottom: 5px;
+    color: #F39C12; 
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.profile-edit input, 
+.profile-edit select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.profile-edit button {
+    margin-right: 10px;
+}
+
+.profile-info {
+    text-align: center; 
+}
+
+#editProfileButton {
+    display: inline-block; 
+    margin-top: 20px; 
+}
+
+/* Botón de no guardar */
+.btn-nosave {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #e74c3c; 
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.2);
+    text-decoration: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+}
+
+.btn-nosave:hover {
+    background-color: #c0392b; 
+    box-shadow: 0 6px 12px rgba(192, 57, 43, 0.3);
+    color: black;
+}
+
+/* Botón de Guardar información nueva */
+.btn-save {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #2ecc71; 
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+}
+
+.btn-save:hover {
+    background-color: #27ae60; /* Verde más oscuro */
+    box-shadow: 0 6px 12px rgba(46, 204, 113, 0.3);
+    color: black;
+}
+.card {
+    transition: none; 
+    transform: none;
+}
+/* Estilo de las cartas al pasar el mouse */
+.card:hover {
+    transition: none; 
+    transform: none; 
+}
+
+/* Estilo para el footer 2*/
+.footer-management {
+    background-color: #2C3E50; 
+    color: white;
+    padding: 1rem 2rem; 
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.footer-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.footer-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-footer {
+    background-color: #F39C12; 
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-footer:hover {
+    background-color: #E67E22; 
+}
+
+.btn-footer-exit {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #e74c3c; /* Rojo */
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.2);
+    text-decoration: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+    margin-left: 20px; 
+    margin-right: 3px; 
+}
+
+.btn-footer-exit:hover {
+    color: black;
+    background-color: #c0392b; 
+    box-shadow: 0 6px 12px rgba(192, 57, 43, 0.3);
+}
+
+.paciente-card {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #2C3E50;
+    color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+    max-width: 400px; 
+    margin: 0 auto;
+    padding: 1rem; 
+    display: flex;
+    flex-direction: column; 
+    margin: 0.5rem; 
+    margin-bottom: rem; 
+}
+
+.paciente-card-body {
+    padding: 1rem; 
+}
+
+.paciente-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.paciente-card-title {
+    font-size: 1.2rem; 
+    font-weight: bold;
+    color: #F39C12;
+}
+
+.paciente-icon {
+    font-size: 2rem; 
+    color: #F39C12;
+    border-radius: 50%;
+    border: 2px solid #F39C12;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; 
+    height: 50px; 
+}
+
+.paciente-card-text {
+    font-size: 0.9rem; 
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.paciente-card-observaciones {
+    background-color: white;
+    color: black;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.paciente-card-medicacion {
+    margin-top: 1rem;
+}
+
+.paciente-card-medicacion ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.paciente-card-medicacion li {
+    background: #ffffff;
+    color: #000000;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.btn-edit-info {
+    display: inline-block;
+    background-color: #F39C12;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    margin-top: 1rem;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.btn-edit-info:hover {
+    background-color: #E67E22;
+}
+
+#card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem; 
+}
+
+#add-card-button {
+    margin-left: 0.2rem; 
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+    margin-top: 1rem;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn-delete:hover {
+    color: black;
+    background-color: #c0392b; 
+    box-shadow: 0 6px 12px rgba(192, 57, 43, 0.3);
+}
+
+.btn-group-vertical {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 0.5rem; 
+    margin-top: 1rem; 
+}
+
+.btn-edit-info, .btn-delete {
+    width: 80%; 
+    text-align: center; 
+}
+
+/* Estilos del botón */
+#add-card-button {
+    position: relative; 
+    background-color: #F39C12; 
+    border: none;
+    border-radius: 50%;
+    color: white;
+    width: 60px; 
+    height: 60px; 
+    font-size: 1.8rem; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+    cursor: pointer;
+}
+
+/* Efecto de hover */
+#add-card-button:hover {
+    background-color: #E67E22;
+    transform: scale(1.1);
+}
+
+/* Tooltip */
+#add-card-button::after {
+    content: attr(data-tooltip); /* Muestra el texto del tooltip */
+    position: absolute;
+    bottom: 60px; /* Ajusta la posición del tooltip encima del botón */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.75); /* Fondo del tooltip */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+}
+
+/* Mostrar tooltip al pasar el cursor */
+#add-card-button:hover::after {
+    opacity: 1;
+}
+
+/* Estilo del modal de edición */
+.modal-edit-observations {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permite el scroll si el contenido es más largo que la ventana */
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente */
+}
+
+
+.modal-content-edit {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px; /* Ancho máximo del modal */
+    position: absolute; /* Cambia a absolute */
+    top: 50%; /* Centro vertical */
+    left: 50%; /* Centro horizontal */
+    transform: translate(-50%, -50%); /* Ajusta la posición para centrarlo */
+}
+
+
+/* Estilo del modal de edición */
+.modal-edit-observations {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permite el scroll si el contenido es más largo que la ventana */
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente */
+}
+
+.modal-content-edit {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center; 
+}
+
+/* Estilo del formulario de edición */
+.modal-content-edit form div {
+    margin-bottom: 15px;
+}
+
+.modal-content-edit label {
+    display: block;
+    margin-bottom: 5px;
+    color: #F39C12; /* Color del texto */
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.modal-content-edit input, 
+.modal-content-edit select, 
+.modal-content-edit textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-content-edit .buttons-group {
+    display: flex; /* Usa flexbox para centrar los botones */
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-top: 20px; /* Espacio superior para los botones */
+}
+
+.modal-content-edit .buttons-group button {
+    margin-right: 10px; /* Espacio entre botones */
+}
+
+.modal-content-edit .btn-edit-save {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #2ecc71; /* Verde */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+}
+
+.modal-content-edit .btn-edit-save:hover {
+    background-color: #27ae60; /* Verde más oscuro */
+    box-shadow: 0 6px 12px rgba(46, 204, 113, 0.3);
+    color: black;
+}
+
+.modal-content-edit .btn-edit-cancel {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #e74c3c; /* Rojo */
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.2);
+    text-decoration: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+}
+
+.modal-content-edit .btn-edit-cancel:hover {
+    background-color: #c0392b; /* Rojo más oscuro */
+    box-shadow: 0 6px 12px rgba(192, 57, 43, 0.3);
+    color: black;
+}
+
+
+/* Estilo general del body para eliminar margen por defecto y asegurar el diseño */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Contenedor de la tabla */
+.table-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto; /* Centra la tabla horizontalmente y le da espacio desde el top */
+    padding: 20px;
+}
+
+/* Estilo de la tabla */
+.interactive-table {
+    width: 100%;
+    border-collapse: collapse; /* Elimina el espacio entre bordes de celdas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Estilo del encabezado de la tabla */
+.interactive-table thead {
+    background-color: #2C3E50; /* Color de fondo del encabezado */
+    color: #fff;
+}
+
+.interactive-table th {
+    padding: 15px;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+/* Estilo de las celdas de la tabla */
+.interactive-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilo de las filas alternas para mejor legibilidad */
+.interactive-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilo de los botones de estado */
+.status-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+/* Estado activo del botón */
+.status-button.active {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+/* Estado inactivo del botón */
+.status-button.inactive {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+/* Cambio de color al pasar el cursor sobre el botón */
+.status-button:hover {
+    opacity: 0.9;
+}
+
+/* Contenedor y estilo del botón de agregar ubicación */
+.add-location-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.btn-add-location {
+    background-color: #F39C12; /* Mismo color de fondo de los botones del navbar */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-add-location:hover {
+    background-color: #E67E22; /* Mismo color de hover de los botones del navbar */
+}
+
+/* Estilo para el botón de descarga */
+.btn-download {
+    background-color: #3498db; /* Color de fondo del botón de descarga */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 10px; /* Espacio entre el botón de estado y el botón de descarga */
+}
+
+/* Cambio de color al pasar el cursor sobre el botón de descarga */
+.btn-download:hover {
+    background-color: #2980b9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
