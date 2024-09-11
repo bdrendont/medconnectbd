@@ -1,3 +1,36 @@
+//Importaciones de Modulos
+import { link, Ajax} from "./tool.js";
+import { modalRecuperacionClave, closeModalResetPass, inicarSesion } from "./login.js"; 
+
+
+
+
+//Inicio del JavaScript con el evento de carga principal
+document.addEventListener('DOMContentLoaded', (e) => {
+    //assignEventsToButtons();
+});
+
+// Evento click del DOM
+document.addEventListener('click', (e) => {
+    if(e.target.matches("a")) e.preventDefault()
+    //console.log(e.target)
+    if(e.target.matches("modal")) hideEditModal()
+    if(e.target.matches("#forgotPasswordLink")) modalRecuperacionClave()
+    if(e.target.matches("#resetPasswordModal") || e.target.matches(".btn-close-modal")) closeModalResetPass()
+    if(e.target.matches("#nueva-cuenta")) link("newaccount.html")
+    //if(e.target.matches("#btn-ingresar")) 
+    
+});
+
+//El evento Submit de los Formularion
+document.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (e.target.matches("#form-login")) inicarSesion("POST")
+  
+  });
+
+////////////////////////////////////////////////////////////////////
+/*
 document.addEventListener('DOMContentLoaded', function() {
     const sidebar = document.getElementById('sidebar');
     const closeSidebarBtn = document.getElementById('close-sidebar');
@@ -235,13 +268,6 @@ function hideEditModal() {
 // Evento para cerrar el modal al hacer clic en el botón de cancelar
 closeModal.addEventListener('click', hideEditModal);
 
-// Evento para cerrar el modal al hacer clic fuera del contenido
-window.addEventListener('click', (event) => {
-    if (event.target == modal) {
-        hideEditModal();
-    }
-});
-
 // Evento para guardar los cambios en el formulario
 editForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -253,10 +279,6 @@ function updateCardObservations(index, newObservations) {
     const observationsElement = card.querySelector('.paciente-card-observaciones .observaciones-recuadro p');
     observationsElement.textContent = newObservations;
 }
-
-// Asignar eventos a botones al cargar
-document.addEventListener('DOMContentLoaded', () => {
-    assignEventsToButtons();
-});
+*/
 
 
