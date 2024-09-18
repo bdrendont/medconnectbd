@@ -21,8 +21,16 @@ export function inicarSesion(method){
         method, 
         param: info, 
         fSuccess: (resp)=>{
-            //console.log(resp)
-            if (resp.code == 200) link("accesos.html?idtk="+resp.idToken)
+            console.log(resp)
+            if (resp.code == 200) {
+                localStorage.clear()
+                localStorage.setItem("idtk",resp.idToken)
+                localStorage.setItem("Alias",resp.Alias)
+                localStorage.setItem("Usuario",resp.Usuario)
+                localStorage.setItem("id_User",resp.idUser)
+                link("accesos.html?idtk="+resp.idToken)
+            }
+                
         }
     })
 

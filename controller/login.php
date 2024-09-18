@@ -7,10 +7,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $post = json_decode(file_get_contents('php://input'),true);
         
         if($post["user"]!="" && $post["pass"]!=""){
-            //echo $_post["user"]; 
+            //echo $post["user"]; 
             $bd = new ConfigDb();
             $conn = $bd->conexion();
-            $sql = "SELECT `IdUsuario`, `UsuNombre`, `UsuApellido` FROM `tbusuario` WHERE `UsuCorreo`= :user AND `UsuContrasena`= MD5(:clave)";
+            $sql = "SELECT `id_usuario`, `nombre_completo`, `apellidos_completos`, `perfil` FROM `usuarios` WHERE `correo_electronico`= :user 	AND `contrasena`= MD5(:clave)";
             $stmt = $conn ->prepare($sql);
             $stmt->bindParam(":user",$post["user"],PDO::PARAM_STR);
             $stmt->bindParam(":clave",$post["pass"],PDO::PARAM_STR);
@@ -19,13 +19,14 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 if(count($result) > 0)
                 {
                     $idtoken="";
-                    //$idtoken = $bd->obtenerToken($result[0]["IdUsuario"], $result[0]["UsuNombre"]." ".$result[0]["UsuApellido"]);
+                    $idtoken = $bd->obtenerToken($result[0]["id_usuario"], $result[0]["nombre_completo"]." ".$result[0]["apellidos_completos"]);
                     //var_dump($result);
 
                     header("HTTP/1.1 200 OK");
                     echo json_encode(['code'=>200,
-                    'idUser'=>$result[0]["IdUsuario"],
-                    'Usuario'=>$result[0]["UsuNombre"]." ".$result[0]["UsuApellido"],
+                    'idUser'=>$result[0]["id_usuario"],
+                    'Alias'=>$result[0]["perfil"],
+                    'Usuario'=>$result[0]["nombre_completo"]." ".$result[0]["apellidos_completos"],
                     'idToken'=>$idtoken,
                     'msg' => "OK"]);
                 }else{                    
