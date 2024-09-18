@@ -33,5 +33,8 @@ export function inicarSesion(method){
                 
         }
     })
+}
 
+export function validarToken(){
+    if(localStorage.getItem("idtk")) link("accesos.html?idtk="+localStorage.getItem("idtk"))
 }

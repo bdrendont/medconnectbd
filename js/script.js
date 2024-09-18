@@ -1,6 +1,6 @@
 //Importaciones de Modulos
-import { link, Ajax} from "./tool.js";
-import { modalRecuperacionClave, closeModalResetPass, inicarSesion } from "./login.js"; 
+import { link, Ajax, salida} from "./tool.js";
+import { modalRecuperacionClave, closeModalResetPass, inicarSesion, validarToken } from "./login.js"; 
 
 
 
@@ -8,6 +8,10 @@ import { modalRecuperacionClave, closeModalResetPass, inicarSesion } from "./log
 //Inicio del JavaScript con el evento de carga principal
 document.addEventListener('DOMContentLoaded', (e) => {
     //assignEventsToButtons();
+    let path = location.pathname
+    //console.log(path.substring(path.lastIndexOf("/")+1).length)
+    if (path.substring(path.lastIndexOf("/")+1).includes("index") || path.substring(path.lastIndexOf("/")+1).length=="0") validarToken()
+    //if(path.includes("accesso")) validarAcceso()
 });
 
 // Evento click del DOM
@@ -18,6 +22,7 @@ document.addEventListener('click', (e) => {
     if(e.target.matches("#forgotPasswordLink")) modalRecuperacionClave()
     if(e.target.matches("#resetPasswordModal") || e.target.matches(".btn-close-modal")) closeModalResetPass()
     if(e.target.matches("#nueva-cuenta")) link("newaccount.html")
+    if(e.target.matches("#btnExit")) salida()
     //if(e.target.matches("#btn-ingresar")) 
     
 });

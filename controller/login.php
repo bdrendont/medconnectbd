@@ -46,6 +46,32 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         echo json_encode(['code'=>500,'msg' => 'Error interno al procesar su petici&oacute;n', "ERROR"=>$ex->getMessage()]);
         //echo json_encode(['code'=>500,'msg' => 'Error interno al procesar su peticion'.$ex->getMessage()]);
     }
+} else if($_SERVER["REQUEST_METHOD"]=="GET"){
+    try {
+        if($_GET["idtoken"]!=""){
+            //echo $post["user"]; 
+            $bd = new ConfigDb();
+            $conn = $bd->conexion();
+            $sql = "UPDATE `token_acceso` SET `ESTADO`='INACTIVO' WHERE `ID_TOKEN`= :idtk";
+            $stmt = $conn ->prepare($sql);
+            $stmt->bindParam(":idtk",$_GET["idtoken"],PDO::PARAM_STR);
+            if($stmt->execute()){                
+                //var_dump($result);
+                header("HTTP/1.1 200 OK");
+                echo json_encode(['code'=>200,'msg'=> "OK"]);
+            }else{
+                header("HTTP/1.1 203 OK");
+                echo json_encode(['code'=>203,'msg' => "Las credenciales no son validas"]);
+            }
+            $stmt = null;
+            $conn = null;
+        }
+        //exit();
+    } catch (Exception $ex) {
+        header("HTTP/1.1 500");
+        echo json_encode(['code'=>500,'msg' => 'Error interno al procesar su petici&oacute;n', "ERROR"=>$ex->getMessage()]);
+        //echo json_encode(['code'=>500,'msg' => 'Error interno al procesar su peticion'.$ex->getMessage()]);
+    }
 }else {
     header("HTTP/1.1 400");
     echo json_encode(['code'=>400,'msg' => 'Error, La peticion no se pudo procesar']);
