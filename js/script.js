@@ -1,6 +1,7 @@
 //Importaciones de Modulos
 import { link, Ajax, salida} from "./tool.js";
 import { modalRecuperacionClave, closeModalResetPass, inicarSesion, validarToken } from "./login.js"; 
+import { registrarUsuario } from "./usuario.js";
 
 //Inicio del JavaScript con el evento de carga principal
 document.addEventListener('DOMContentLoaded', (e) => {
@@ -30,6 +31,7 @@ document.addEventListener('click', (e) => {
 document.addEventListener("submit", (e) => {
     e.preventDefault();
     if (e.target.matches("#form-login")) inicarSesion("POST")
+    if (e.target.matches("#form-newaccount")) registrarUsuario("PATCH")
   
   });
 
