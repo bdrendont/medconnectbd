@@ -2,9 +2,6 @@
 import { link, Ajax, salida} from "./tool.js";
 import { modalRecuperacionClave, closeModalResetPass, inicarSesion, validarToken } from "./login.js"; 
 
-
-
-
 //Inicio del JavaScript con el evento de carga principal
 document.addEventListener('DOMContentLoaded', (e) => {
     //assignEventsToButtons();
@@ -21,7 +18,9 @@ document.addEventListener('click', (e) => {
     if(e.target.matches("modal")) hideEditModal()
     if(e.target.matches("#forgotPasswordLink")) modalRecuperacionClave()
     if(e.target.matches("#resetPasswordModal") || e.target.matches(".btn-close-modal")) closeModalResetPass()
-    if(e.target.matches("#nueva-cuenta")) link("newaccount.html")
+    if(e.target.matches("#nueva-cuenta")) link("newaccount.html") //Botón de ir a crear cuenta
+    if(e.target.matches("#iniciar-cuenta")) link("index.html") //Botón de ir a iniciar sesión
+    if(e.target.matches("#ir-gestion-salas")) link("gestionsalas.html") //Botón de ir a gestion de salas
     if(e.target.matches("#btnExit")) salida()
     //if(e.target.matches("#btn-ingresar")) 
     
