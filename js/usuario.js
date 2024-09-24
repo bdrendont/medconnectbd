@@ -2,7 +2,7 @@ import { Ajax } from "./tool.js";
 
 export function registrarUsuario(method){
 
-    alert("OK vamos a enviar los Datos del Formulario a travez de metodo "+method);
+    alert("OK se enviarán los datos del Formulario a travez del método "+method);
     let $form = document.getElementById("form-newaccount")
     let param= {
         nombres: $form.nombres.value,

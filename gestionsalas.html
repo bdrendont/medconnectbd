@@ -70,7 +70,25 @@
 
       </div> 
 
-
+<!-- Modal de Nueva Ubicación -->
+<div id="NewLocationModal" class="confirmation-card">
+    <h5>Agregar Ubicación</h5>
+    <form>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Ingrese el nombre de la sala" required>
+        </div>
+        <select class="form-control" id="perfil" required>
+            <option value="" disabled selected>Seleccione su perfil</option>
+            <option value="1">Jefe de Sala</option>
+            <option value="2">Integrante de Sala</option>
+            <option value="3">Sala Privada</option>
+        </select>
+        <div class="confirmation-buttons">
+            <button type="submit" class="btn btn-cancel">Agregar ubicación</button>
+            <button type="button" class="btn btn-confirm btn-close-modal">Cancelar</button>
+        </div>
+    </form>
+  </div>
 
 
       <footer class="footer-management navbar-custom">
