@@ -2,8 +2,8 @@
 class ConfigDb {
     private $db_host = "localhost"; //Lugar o IP donde esta el servidor de Base de datos
     private $db_port = "3306"; // Puerto de Base de datos MySQL
-    private $db_user = "root"; // brignidb Nombre del usuario para conectarnos a la base de datos 
-    private $db_pass = ""; // Brignir123 Contraseña del Usuario de la Base de datos
+    private $db_user = "brignidb"; // brignidb Nombre del usuario para conectarnos a la base de datos 
+    private $db_pass = "Brignir123"; // Brignir123 Contraseña del Usuario de la Base de datos
     private $db_name = "medconnect"; // Nombre de la Base de Datos
 
     public function conexion(){
