@@ -3,6 +3,7 @@ import { link, Ajax, salida} from "./tool.js";
 import { modalRecuperacionClave, closeModalResetPass, inicarSesion, validarToken } from "./login.js"; 
 import { registrarUsuario } from "./usuario.js";
 import { perfil } from "./acceso.js";
+import { listadoSala } from "./salas.js";
 
 //Inicio del JavaScript con el evento de carga principal
 document.addEventListener('DOMContentLoaded', (e) => {
@@ -11,6 +12,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     //console.log(path.substring(path.lastIndexOf("/")+1).length)
     if (path.substring(path.lastIndexOf("/")+1).includes("index") || path.substring(path.lastIndexOf("/")+1).length=="0") validarToken()
     if(path.includes("accesos")) perfil()
+    if(path.includes("gestionsalas")) {perfil(); listadoSala();}
 });
 
 // Evento click del DOM

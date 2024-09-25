@@ -2,7 +2,8 @@ import { Ajax, salida } from "./tool.js"
 
 export function perfil(){
     if(localStorage.getItem("idtk")){
-        document.getElementById("lb_perfil").innerHTML=localStorage.getItem("Alias")
+        let $perfil = document.getElementById("profileDropdown")
+        $perfil.lastElementChild.innerHTML=localStorage.getItem("Alias")
         Ajax({
             url: "controller/token.php",
             method: "POST",
