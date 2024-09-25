@@ -23,7 +23,6 @@ document.addEventListener('click', (e) => {
     if(e.target.matches("#iniciar-cuenta")) link("index.html") //Botón de ir a iniciar sesión
     if(e.target.matches("#ir-gestion-salas")) link("gestionsalas.html") //Botón de ir a gestion de salas
     if(e.target.matches("#btnExit")) salida()
-    //if(e.target.matches("#btn-ingresar")) 
     
 });
 

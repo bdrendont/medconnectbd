@@ -16,12 +16,13 @@ export function inicarSesion(method){
     let pass = document.getElementById("password").value;
 
     let info = {user,pass}
+    //console.log(info)
     Ajax({
         url: "controller/login.php", 
         method, 
         param: info, 
         fSuccess: (resp)=>{
-            console.log(resp)
+            //console.log(resp)
             if (resp.code == 200) {
                 localStorage.clear()
                 localStorage.setItem("idtk",resp.idToken)
@@ -29,8 +30,9 @@ export function inicarSesion(method){
                 localStorage.setItem("Usuario",resp.Usuario)
                 localStorage.setItem("id_User",resp.idUser)
                 link("accesos.html?idtk="+resp.idToken)
-            }
-                
+            } else {
+                alert(resp.msg)
+            }                
         }
     })
 }

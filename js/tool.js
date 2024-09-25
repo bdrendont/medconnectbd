@@ -2,16 +2,11 @@ export function link(url) { location.href=url}
 
 
 export async function Ajax (info){
-    let { url, method, param, fSuccess } = info, headers = { "Content-Type": "application/json" };
+    let { url, method, param, fSuccess } = info, headers = { "Content-Type": "application/json"};
     if (method === "PATCH") headers = {"Content-Type": "multipart/form-data"}
     if (param !== undefined && method === "GET") url += "?" + new URLSearchParams(param)
     if (method === "GET") method = { method, headers }
-    if (method === "POST" || method === "PUT" || method === "DELETE", method === "PATCH")
-      method = {
-        method,
-        headers,
-        body: JSON.stringify(param),
-      }
+    if (method === "POST" || method === "PUT" || method === "DELETE" || method === "PATCH") method = {method,headers,body: JSON.stringify(param)}
   
     try {
       //console.log(url,method)
