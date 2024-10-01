@@ -1,9 +1,10 @@
 //Importaciones de Modulos
 import { link, Ajax, salida} from "./tool.js";
-import { modalRecuperacionClave, closeModalResetPass, inicarSesion, validarToken } from "./login.js"; 
+import { modalRecuperacionClave, closeModalResetPass, inicarSesion, validarToken, modalNewLocation, closeNewLocation, VerPerfil } from "./login.js"; 
 import { registrarUsuario } from "./usuario.js";
 import { perfil } from "./acceso.js";
 import { listadoSala } from "./salas.js";
+import { listadoPacientesInformes } from "./informes.js";
 
 //Inicio del JavaScript con el evento de carga principal
 document.addEventListener('DOMContentLoaded', (e) => {
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     if (path.substring(path.lastIndexOf("/")+1).includes("index") || path.substring(path.lastIndexOf("/")+1).length=="0") validarToken()
     if(path.includes("accesos")) perfil()
     if(path.includes("gestionsalas")) {perfil(); listadoSala();}
+    if(path.includes("gen_informes")) {perfil(); listadoPacientesInformes();}
 });
 
 // Evento click del DOM
@@ -22,6 +24,13 @@ document.addEventListener('click', (e) => {
     if(e.target.matches("modal")) hideEditModal()
     if(e.target.matches("#forgotPasswordLink")) modalRecuperacionClave()
     if(e.target.matches("#resetPasswordModal") || e.target.matches(".btn-close-modal")) closeModalResetPass()
+    
+    if(e.target.matches("#newubi")) modalNewLocation()
+    if(e.target.matches("#NewLocationModal") || e.target.matches(".btn-close-modal")) closeNewLocation()
+    
+    if(e.target.matches("#viewProfile")) VerPerfil()
+    if(e.target.matches("#profileCard") || e.target.matches(".btn-close-modal")) closeNewLocation()
+
     if(e.target.matches("#nueva-cuenta")) link("newaccount.html") //Botón de ir a crear cuenta
     if(e.target.matches("#iniciar-cuenta")) link("index.html") //Botón de ir a iniciar sesión
     if(e.target.matches("#ir-gestion-salas")) link("gestionsalas.html") //Botón de ir a gestion de salas

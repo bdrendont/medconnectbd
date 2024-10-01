@@ -38,36 +38,45 @@
     </nav>
     
       
-      <div class="contenedor">
+    <div class="contenedor">
         <div class="table-container">
             <table class="interactive-table" id="tb_ubicacion">
                 <thead>
                     <tr>
-                        <th>Nombre de Ubicación</th>
-                        <th>Estado</th>
+                        <th>Nombre de ubicación</th>
+                        <th>Estado / Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Ubicación A</td>
-                        <td><button class="status-button active">Activo</button></td>
+                        <td><button class="status-button active">Disponible</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>Ubicación B</td>
-                        <td><button class="status-button inactive">Inactivo</button></td>
+                        <td><button class="status-button inactive">No Disponible</button></td>
+                        <td>
+                            <button class="btn-edit">Editar</button>
+                            <button class="btn-delete">Eliminar</button>
+                        </td> <!-- Columna con botones de acciones -->
                     </tr>
                     <tr>
                         <td>Ubicación C</td>
-                        <td><button class="status-button active">Activo</button></td>
+                        <td><button class="status-button active">Disponible</button></td>
+                        <td>
+                            <button class="btn-edit">Editar</button>
+                            <button class="btn-delete">Eliminar</button>
+                        </td> <!-- Columna con botones de acciones -->
                     </tr>
                 </tbody>
             </table>
             <div class="add-location-container">
-                <button class="btn-add-location">Agregar Ubicación</button>
+                <button class="btn-add-location" id="newubi">Agregar Ubicación</button>
             </div>
         </div>
-
-      </div> 
+    </div>
+    
 
 <!-- Modal de Nueva Ubicación -->
 <div id="NewLocationModal" class="confirmation-card">
@@ -76,15 +85,16 @@
         <div class="mb-3">
             <input type="text" class="form-control" placeholder="Ingrese el nombre de la sala" required>
         </div>
-        <select class="form-control" id="perfil" required>
-            <option value="" disabled selected>Seleccione su perfil</option>
-            <option value="1">Jefe de Sala</option>
-            <option value="2">Integrante de Sala</option>
-            <option value="3">Sala Privada</option>
+        <select class="form-control" id="disponibilidad" required>
+            <option value="" disabled selected>Seleccione una opción</option>
+            <option value="1">Disponible</option>
+            <option value="2">No disponible</option>
         </select>
+        <br>
         <div class="confirmation-buttons">
             <button type="submit" class="btn btn-cancel">Agregar ubicación</button>
             <button type="button" class="btn btn-confirm btn-close-modal">Cancelar</button>
+            
         </div>
     </form>
   </div>
@@ -112,9 +122,12 @@
      
 <!-- Tarjeta Flotante del Perfil -->
 <div class="profile-card" id="profileCard">
-    <button class="close-profile" id="closeProfile">X</button>
     <div class="profile-header">
-        <img src="https://via.placeholder.com/120" alt="Foto de Perfil">
+        
+        <div class="user-icon">
+            <i class="fas fa-user fa-4x" style="color: #F39C12;"></i>
+        </div>
+        <br>
         <h5>Nombre del Perfil</h5>
     </div>
     <div class="profile-info" id="profileInfo">
@@ -122,8 +135,11 @@
         <p><strong>Correo:</strong> <span id="profileEmail">ejemplo@correo.com</span></p>
         <p><strong>Celular:</strong> <span id="profilePhone">123-456-7890</span></p>
         <p><strong>Tipo de Perfil:</strong> <span id="profileType">Usuario</span></p>
-        <p><strong>Documento subido:</strong> <a href="ruta/al/documento.pdf" target="_blank">Ver Documento</a></p>
-        <a href="#" id="editProfileButton" class="btn btn-custom">Editar mi perfil</a>
+        <br>
+        <div class="confirmation-buttons">
+            <button type="submit" class="btn btn-cancel">Editar perfil</button>
+            <button type="button" class="btn btn-confirm btn-close-modal">Cancelar</button>
+        </div>
     </div>
     <div class="profile-edit" id="profileEdit" style="display: none;">
         <form id="editProfileForm">
@@ -143,18 +159,9 @@
                     <option value="perfil3">Sala Privada</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-save">Guardar Cambios</button>
+            <button type="submit" class="btn btn-save">Editar perfil</button>
             <button type="button" id="cancelEdit" class="btn btn-nosave">Cancelar</button>
         </form>
-    </div>
-</div>
-
-<!-- Ventana flotante de confirmación de cierre de sesión -->
-<div id="logoutConfirmation" class="confirmation-card">
-    <h5>¿Estás seguro de que deseas cerrar sesión?</h5>
-    <div class="confirmation-buttons">
-        <a href="index.html" class="btn btn-confirm">Salir</a>
-        <button class="btn btn-cancel" onclick="closeConfirmation()">Permanecer en mi cuenta</button>
     </div>
 </div>
 

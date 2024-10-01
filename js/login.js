@@ -10,6 +10,26 @@ export function closeModalResetPass() {
     document.getElementById('resetPasswordModal').style.display = 'none';
 }
 
+// Función para abrir el modal de nueva ubicación
+export function modalNewLocation(){
+    document.getElementById('NewLocationModal').style.display = 'block';
+}
+
+// Función para cerrar el modal de nueva ubicación
+export function closeNewLocation() {
+    document.getElementById('NewLocationModal').style.display = 'none';
+}
+
+// Función para tarjeta de perfil
+export function VerPerfil(){
+    document.getElementById('profileCard').style.display = 'block';
+}
+
+// Función para tarjeta de perfil
+export function closePerfil() {
+    document.getElementById('NewLocationModal').style.display = 'none';
+}
+
 //Funcion de Iniciar Sesion
 export function inicarSesion(method){
     let user = document.getElementById("email").value;

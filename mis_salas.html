@@ -82,9 +82,12 @@
      
 <!-- Tarjeta Flotante del Perfil -->
 <div class="profile-card" id="profileCard">
-    <button class="close-profile" id="closeProfile">X</button>
     <div class="profile-header">
-        <img src="https://via.placeholder.com/120" alt="Foto de Perfil">
+        
+        <div class="user-icon">
+            <i class="fas fa-user fa-4x" style="color: #F39C12;"></i>
+        </div>
+        <br>
         <h5>Nombre del Perfil</h5>
     </div>
     <div class="profile-info" id="profileInfo">
@@ -92,8 +95,11 @@
         <p><strong>Correo:</strong> <span id="profileEmail">ejemplo@correo.com</span></p>
         <p><strong>Celular:</strong> <span id="profilePhone">123-456-7890</span></p>
         <p><strong>Tipo de Perfil:</strong> <span id="profileType">Usuario</span></p>
-        <p><strong>Documento subido:</strong> <a href="ruta/al/documento.pdf" target="_blank">Ver Documento</a></p>
-        <a href="#" id="editProfileButton" class="btn btn-custom">Editar mi perfil</a>
+        <br>
+        <div class="confirmation-buttons">
+            <button type="submit" class="btn btn-cancel">Editar perfil</button>
+            <button type="button" class="btn btn-confirm btn-close-modal">Cancelar</button>
+        </div>
     </div>
     <div class="profile-edit" id="profileEdit" style="display: none;">
         <form id="editProfileForm">
@@ -113,56 +119,8 @@
                     <option value="perfil3">Sala Privada</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-save">Guardar Cambios</button>
+            <button type="submit" class="btn btn-save">Editar perfil</button>
             <button type="button" id="cancelEdit" class="btn btn-nosave">Cancelar</button>
-        </form>
-    </div>
-</div>
-
-
-
-<!-- Ventana flotante de confirmación de cierre de sesión -->
-<div id="logoutConfirmation" class="confirmation-card">
-    <h5>¿Estás seguro de que deseas cerrar sesión?</h5>
-    <div class="confirmation-buttons">
-        <a href="index.html" class="btn btn-confirm">Salir</a>
-        <button class="btn btn-cancel" onclick="closeConfirmation()">Permanecer en mi cuenta</button>
-    </div>
-</div>
-
-
-<!-- Tarjeta Flotante para Editar Observaciones -->
-<div id="modal-edit-observations" class="modal-edit-observations">
-    <div class="modal-content-edit">
-        <form id="edit-observations-form">
-            <div class="form-group">
-                <label for="name"><strong>Nombre:</strong></label>
-                <input type="text" id="name" name="name" placeholder="Ingrese el nombre">
-            </div>
-            <div class="form-group">
-                <label for="type"><strong>Seleccione la ubicación:</strong></label>
-                <select id="type" name="type">
-                    <option value="ubi1">A</option>
-                    <option value="ubi2">B</option>
-                    <option value="ubi3">C</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="doc"><strong>Documento:</strong></label>
-                <input type="text" id="doc" name="doc" placeholder="Ingrese el documento">
-            </div>
-            <div class="form-group">
-                <label for="age"><strong>Edad:</strong></label>
-                <input type="number" id="age" name="age" placeholder="Ingrese la edad" min="0">
-            </div>
-            <div class="form-group">
-                <label for="observations-input"><strong>Observaciones:</strong></label>
-                <textarea id="observations-input" rows="5" placeholder="Ingrese nuevas observaciones..."></textarea>
-            </div>
-            <div class="form-group buttons-group">
-                <button type="submit" class="btn btn-edit-save">Guardar Cambios</button>
-                <button type="button" class="btn btn-edit-cancel">Cancelar</button>
-            </div>
         </form>
     </div>
 </div>
