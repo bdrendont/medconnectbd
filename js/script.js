@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     if(path.includes("accesos")) perfil()
     if(path.includes("gestionsalas")) {perfil(); listadoSala();}
     if(path.includes("gen_informes")) {perfil(); listadoPacientesInformes();}
+    if(path.includes("mis_salas")) perfil()
 });
 
 // Evento click del DOM

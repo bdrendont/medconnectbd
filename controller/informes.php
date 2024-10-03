@@ -6,7 +6,6 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
     try {
         $bd = new Configdb();
         $conn = $bd->conexion();
-
         $sql = "SELECT `id_paciente`, `nombre_paciente` FROM `pacientes` ORDER BY `nombre_paciente`";
 
         if (isset($_GET["id"])) {
@@ -38,3 +37,4 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
     header("HTTP/1.1 400");
     echo json_encode(['code'=>400,'msg' => 'Error, La peticion no se pudo procesar']);
 }
+//
