@@ -1,6 +1,6 @@
 //Importaciones de Modulos
-import { link, Ajax, salida} from "./tool.js";
-import { modalRecuperacionClave, closeModalResetPass, inicarSesion, validarToken, modalNewLocation, closeNewLocation, VerPerfil } from "./login.js"; 
+import { link, salida } from "./tool.js";
+import { modalRecuperacionClave, closeModalResetPass, inicarSesion, validarToken, modalNewLocation, closeNewLocation, VerPerfil, closePerfil } from "./login.js";
 import { registrarUsuario } from "./usuario.js";
 import { perfil } from "./acceso.js";
 import { listadoSala } from "./salas.js";
@@ -11,32 +11,27 @@ document.addEventListener('DOMContentLoaded', (e) => {
     //assignEventsToButtons();
     let path = location.pathname
     //console.log(path.substring(path.lastIndexOf("/")+1).length)
-    if (path.substring(path.lastIndexOf("/")+1).includes("index") || path.substring(path.lastIndexOf("/")+1).length=="0") validarToken()
-    if(path.includes("accesos")) perfil()
-    if(path.includes("gestionsalas")) {perfil(); listadoSala();}
-    if(path.includes("gen_informes")) {perfil(); listadoPacientesInformes();}
-    if(path.includes("mis_salas")) perfil()
+    if (path.substring(path.lastIndexOf("/") + 1).includes("index") || path.substring(path.lastIndexOf("/") + 1).length == "0") validarToken()
+    if (path.includes("accesos")) perfil()
+    if (path.includes("gestionsalas")) { perfil(); listadoSala(); }
+    if (path.includes("gen_informes")) { perfil(); listadoPacientesInformes(); }
+    if (path.includes("mis_salas")) perfil()
 });
 
 // Evento click del DOM
 document.addEventListener('click', (e) => {
-    if(e.target.matches("a")) e.preventDefault()
+    if (e.target.matches("a")) e.preventDefault()
     //console.log(e.target)
-    if(e.target.matches("modal")) hideEditModal()
-    if(e.target.matches("#forgotPasswordLink")) modalRecuperacionClave()
-    if(e.target.matches("#resetPasswordModal") || e.target.matches(".btn-close-modal")) closeModalResetPass()
-    
-    if(e.target.matches("#newubi")) modalNewLocation()
-    if(e.target.matches("#NewLocationModal") || e.target.matches(".btn-close-modal")) closeNewLocation()
-    
-    if(e.target.matches("#viewProfile")) VerPerfil()
-    if(e.target.matches("#profileCard") || e.target.matches(".btn-close-modal")) closeNewLocation()
+    if (e.target.matches(".btn-close-modal")) e.target.parentNode.parentNode.parentNode.style.display = 'none'
+    if (e.target.matches("#forgotPasswordLink")) modalRecuperacionClave()
+    if (e.target.matches("#newubi")) modalNewLocation()
+    if (e.target.matches("#viewProfile")) VerPerfil()
 
-    if(e.target.matches("#nueva-cuenta")) link("newaccount.html") //Botón de ir a crear cuenta
-    if(e.target.matches("#iniciar-cuenta")) link("index.html") //Botón de ir a iniciar sesión
-    if(e.target.matches("#ir-gestion-salas")) link("gestionsalas.html") //Botón de ir a gestion de salas
-    if(e.target.matches("#btnExit")) salida()
-    
+    if (e.target.matches("#nueva-cuenta")) link("newaccount.html") //Botón de ir a crear cuenta
+    if (e.target.matches("#iniciar-cuenta")) link("index.html") //Botón de ir a iniciar sesión
+    if (e.target.matches("#ir-gestion-salas")) link("gestionsalas.html") //Botón de ir a gestion de salas
+    if (e.target.matches("#btnExit")) salida()
+
 });
 
 //El evento Submit de los Formularion
@@ -44,8 +39,8 @@ document.addEventListener("submit", (e) => {
     e.preventDefault();
     if (e.target.matches("#form-login")) inicarSesion("POST")
     if (e.target.matches("#form-newaccount")) registrarUsuario("PATCH")
-  
-  });
+
+});
 
 ////////////////////////////////////////////////////////////////////
 /*
