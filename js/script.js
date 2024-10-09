@@ -3,8 +3,9 @@ import { link, salida } from "./tool.js";
 import { modalRecuperacionClave, closeModalResetPass, inicarSesion, validarToken, modalNewLocation, closeNewLocation, VerPerfil, closePerfil, VerEditPerfil } from "./login.js";
 import { registrarUsuario } from "./usuario.js";
 import { perfil } from "./acceso.js";
-import { listadoSala } from "./salas.js";
+import { listadoSala, modalEditarSala } from "./salas.js";
 import { listadoPacientesInformes } from "./informes.js";
+
 
 
 //Inicio del JavaScript con el evento de carga principal
@@ -33,7 +34,8 @@ document.addEventListener('click', (e) => {
     if (e.target.matches("#iniciar-cuenta")) link("index.html") //Botón de ir a iniciar sesión
     if (e.target.matches("#ir-gestion-salas")) link("gestionsalas.html") //Botón de ir a gestion de salas
     if (e.target.matches("#btnExit")) salida()
-
+    if(e.target.matches(".sala_upd")) modalEditarSala(e.target)
+    if(e.target.matches(".sala_del")) modalEliminarSala(e.target)
 });
 
 //El evento Submit de los Formularion
