@@ -29,7 +29,7 @@
                             <li><a class="dropdown-item" href="#" id="viewProfile"><i class="fas fa-user me-2"></i> Ver perfil</a></li>
 
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-sign-out-alt me-2"></i> Cerrar sesión</a></li>
+                            <li><a class="dropdown-item text-danger"  id="btnExit" href="#"><i class="fas fa-sign-out-alt me-2"></i> Cerrar sesión</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -44,7 +44,8 @@
                 <thead>
                     <tr>
                         <th>Nombre de ubicación</th>
-                        <th>Estado / Acciones</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,22 +53,10 @@
                         <td>Ubicación A</td>
                         <td><button class="status-button active">Disponible</button>
                         </td>
-                    </tr>
-                    <tr>
-                        <td>Ubicación B</td>
-                        <td><button class="status-button inactive">No Disponible</button></td>
                         <td>
-                            <button class="btn-edit">Editar</button>
-                            <button class="btn-delete">Eliminar</button>
-                        </td> <!-- Columna con botones de acciones -->
-                    </tr>
-                    <tr>
-                        <td>Ubicación C</td>
-                        <td><button class="status-button active">Disponible</button></td>
-                        <td>
-                            <button class="btn-edit">Editar</button>
-                            <button class="btn-delete">Eliminar</button>
-                        </td> <!-- Columna con botones de acciones -->
+                            <button class="btn-action edit">Editar</button>
+                            <button class="btn-action delete">Eliminar</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -99,6 +88,27 @@
     </form>
   </div>
 
+<!-- Modal Editar Ubicación -->
+<div id="EditLocationModal" class="confirmation-card">
+    <h5>Editar Ubicación</h5>
+    <form>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Ingrese el nombre de la sala" required>
+        </div>
+        <select class="form-control" id="disponibilidad" required>
+            <option value="" disabled selected>Seleccione una opción</option>
+            <option value="1">Disponible</option>
+            <option value="2">No disponible</option>
+        </select>
+        <br>
+        <div class="confirmation-buttons">
+            <button type="submit" class="btn btn-cancel">Editar</button>
+            <button type="button" class="btn btn-confirm btn-close-modal">Cancelar</button>
+            
+        </div>
+    </form>
+  </div>
+
 
       <footer class="footer-management navbar-custom">
         <div class="footer-content d-flex justify-content-between align-items-center">
@@ -114,7 +124,9 @@
                 <button class="btn btn-footer" onclick="location.href='mis_salas.html'">
                     <i class="fas fa-users fa-lg" style="color: white;"></i> Mis Pacientes
                 </button>
-                <button class="btn btn-footer-exit" onclick="window.location.href='accesos.html';">Ir a mis accesos</button>
+                <button class="btn btn-footer" onclick="window.location.href='accesos.html';">
+                    <i class="fas fa-sign-out-alt" style="color: white;"></i> Ir a mis accesos
+                </button>
             </div>
         </div>
     </footer>

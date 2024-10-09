@@ -30,6 +30,16 @@ export function closePerfil() {
     document.getElementById('profileCard').style.display = 'none';
 }
 
+// Función para ver tarjeta de Editar Perfil
+export function VerEditPerfil() {
+    document.getElementById('EditInfoPerfil').style.display = 'block';
+}
+
+// Función para tarjeta de Editar perfil
+export function closeEditPerfil() {
+    document.getElementById('EditInfoPerfil').style.display = 'none';
+}
+
 //Funcion de Iniciar Sesion
 export function inicarSesion(method) {
     let user = document.getElementById("email").value;

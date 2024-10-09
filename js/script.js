@@ -1,10 +1,11 @@
 //Importaciones de Modulos
 import { link, salida } from "./tool.js";
-import { modalRecuperacionClave, closeModalResetPass, inicarSesion, validarToken, modalNewLocation, closeNewLocation, VerPerfil, closePerfil } from "./login.js";
+import { modalRecuperacionClave, closeModalResetPass, inicarSesion, validarToken, modalNewLocation, closeNewLocation, VerPerfil, closePerfil, VerEditPerfil } from "./login.js";
 import { registrarUsuario } from "./usuario.js";
 import { perfil } from "./acceso.js";
 import { listadoSala } from "./salas.js";
 import { listadoPacientesInformes } from "./informes.js";
+
 
 //Inicio del JavaScript con el evento de carga principal
 document.addEventListener('DOMContentLoaded', (e) => {
@@ -26,6 +27,7 @@ document.addEventListener('click', (e) => {
     if (e.target.matches("#forgotPasswordLink")) modalRecuperacionClave()
     if (e.target.matches("#newubi")) modalNewLocation()
     if (e.target.matches("#viewProfile")) VerPerfil()
+    if (e.target.matches("#edit-profile")) VerEditPerfil()
 
     if (e.target.matches("#nueva-cuenta")) link("newaccount.html") //Botón de ir a crear cuenta
     if (e.target.matches("#iniciar-cuenta")) link("index.html") //Botón de ir a iniciar sesión

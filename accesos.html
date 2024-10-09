@@ -125,11 +125,37 @@
                     <option value="perfil3">Sala Privada</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-save">Editar perfil</button>
+            <button type="submit" class="btn btn-save" id="edit-profile">Editar perfil</button>
             <button type="button" id="cancelEdit" class="btn btn-nosave">Cerrar</button>
         </form>
     </div>
 </div>
+
+<!-- Modal Editar Perfil -->
+<div id="EditInfoPerfil" class="confirmation-card">
+    <h5>Editar perfil</h5>
+    <form>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Ingrese el nuevo correo electrónico" required>
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Ingrese el nuevo número de celular" required>
+        </div>
+        <select class="form-control" id="perfil" required>
+            <option value="" disabled selected>Seleccione su perfil</option>
+            <option value="1">Jefe de Sala</option>
+            <option value="2">Integrante de Sala</option>
+            <option value="3">Sala Privada</option>
+        </select>
+<br>
+        <div class="confirmation-buttons">
+            <button type="submit" class="btn btn-cancel">Agregar ubicación</button>
+            <button type="button" class="btn btn-confirm btn-close-modal">Cancelar</button>
+            
+        </div>
+    </form>
+    </div>
+        
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
       <script src="js/script.js" type="module"></script>

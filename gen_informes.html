@@ -44,7 +44,7 @@
                 <thead>
                     <tr>
                         <th>Nombre de paciente</th>
-                        <th>Estado de informe</th>
+                        <th>Descarga de informe</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -59,6 +59,12 @@
                     </tr>
                 </tbody>
             </table>
+            <td>
+                <button class="status-button active">Disponible</button>
+                <button class="btn btn-download">
+                    <i class="fas fa-download"></i> Descargar
+                </button>
+            </td>
         </div>
     </div>
     
@@ -77,7 +83,9 @@
                 <button class="btn btn-footer" onclick="location.href='gestionsalas.html'">
                     <i class="fas fa-cogs fa-lg" style="color: white;"></i> Gestión de salas
                 </button>                
-                <button class="btn btn-footer-exit" onclick="window.location.href='accesos.html';">Ir a mis accesos</button>
+                <button class="btn btn-footer" onclick="window.location.href='accesos.html';">
+                    <i class="fas fa-sign-out-alt" style="color: white;"></i> Ir a mis accesos
+                </button>
             </div>
         </div>
     </footer>

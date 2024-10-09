@@ -1065,12 +1065,14 @@ body {
 .status-button.active {
     background-color: #2ecc71;
     color: #fff;
+    cursor: default
 }
 
 /* Estado inactivo del botón */
 .status-button.inactive {
     background-color: #e74c3c;
     color: #fff;
+    cursor: default
 }
 
 /* Cambio de color al pasar el cursor sobre el botón */
