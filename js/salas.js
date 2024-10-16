@@ -61,10 +61,11 @@ export function registrarUbicacion(method) {
         fSuccess: (resp) => {
             if (resp.code === 200) {
                 alert("La nueva ubicación fue registrada correctamente");
-                location.reload()
+                listadoSala()
             } else {
                 alert(resp.msg); // Mostrar mensaje de error si la respuesta no es exitosa
             }
+            $form.parentNode.style.display = 'none'
         }
     });
 }
