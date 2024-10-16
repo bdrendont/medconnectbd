@@ -48,7 +48,7 @@ document.addEventListener("submit", (e) => {
     e.preventDefault();
     if (e.target.matches("#form-login")) inicarSesion("POST")
     if (e.target.matches("#form-newaccount")) registrarUsuario("PATCH")
-    if (e.target.matches("#form-new-location")) registrarUbicacion("POST")
+    if (e.target.matches("#form-new-location")) registrarUbicacion('POST')
 });
 
 ////////////////////////////////////////////////////////////////////

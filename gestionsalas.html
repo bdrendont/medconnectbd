@@ -70,13 +70,13 @@
 <!-- Modal de Nueva Ubicación -->
 <div id="NewLocationModal" class="confirmation-card">
     <h5>Agregar Ubicación</h5>
-    <form id="form-new-location" onsubmit="event.preventDefault(); registrarUbicacion('POST');">
+    <form id="form-new-location">
         <div class="mb-3">
             <input type="text" name="nombre_sala" class="form-control" placeholder="Ingrese el nombre de la sala" required>
         </div>
         <select name="disponibilidad" class="form-control" required>
-            <option value="1">Disponible</option>
-            <option value="2">No disponible</option>
+            <option value="Disponible">Disponible</option>
+            <option value="No disponible">No disponible</option>
         </select>
         <br>
         <div class="confirmation-buttons">

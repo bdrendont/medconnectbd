@@ -1,4 +1,4 @@
-import { Ajax } from "./tool.js"
+import { Ajax, link } from "./tool.js"
 
 export function listadoSala(){
 
@@ -61,8 +61,7 @@ export function registrarUbicacion(method) {
         fSuccess: (resp) => {
             if (resp.code === 200) {
                 alert("La nueva ubicación fue registrada correctamente");
-                // Aquí podrías cerrar el modal o redirigir a otra página si es necesario
-                // link("index.html");
+                location.reload()
             } else {
                 alert(resp.msg); // Mostrar mensaje de error si la respuesta no es exitosa
             }
