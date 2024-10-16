@@ -18,8 +18,9 @@ export function listadoSala(){
                               </td>
                               <td>
                               <div class='group-button'>
-                              <button class='btn btn-warning btn-sm sala_upd' data-id='${el.id_ubicacion}' data-nom='${el.nombre_ubicacion}' data-est='${el.estados}'>Editar</button>
-                              <button class='btn btn-danger btn-sm sala_del' data-id='${el.id_ubicacion}'>Eliminar</button>
+                              <button class="btn btn-primary btn-sm sala_upd" data-id="${el.id_ubicacion}" data-nom="${el.nombre_ubicacion}" data-est="${el.estados}"><i class="fas fa-pencil-alt"></i></button>
+                              <button class='btn btn-danger btn-sm sala_del' data-id='${el.id_ubicacion}'><i class="fas fa-trash-alt"></i></button>
+
                               </div>
                               </td>
                             </tr>`;
@@ -38,3 +39,35 @@ export function modalEditarSala(el){
     //eestado.
     EditLocationModal.style.display = 'block'
 }
+
+export function modalEliminarSala(el){
+    EditLocationModal.style.display = 'block'
+}
+
+export function registrarUbicacion(method) {
+    let $form = document.getElementById("form-new-location");
+
+    // Crear un objeto param con los datos del formulario
+    let param = {
+        nombre_sala: $form.nombre_sala.value,
+        disponibilidad: $form.disponibilidad.value // Asume que 1 es "Disponible" y 2 es "No disponible"
+    };
+    
+    // Llamada AJAX para enviar los datos al servidor
+    Ajax({
+        url: "controller/salas.php",  // Asegúrate de que esta URL sea correcta
+        method, 
+        param, 
+        fSuccess: (resp) => {
+            if (resp.code === 200) {
+                alert("La nueva ubicación fue registrada correctamente");
+                // Aquí podrías cerrar el modal o redirigir a otra página si es necesario
+                // link("index.html");
+            } else {
+                alert(resp.msg); // Mostrar mensaje de error si la respuesta no es exitosa
+            }
+        }
+    });
+}
+
+

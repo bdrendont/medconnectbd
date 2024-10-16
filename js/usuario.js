@@ -16,10 +16,6 @@ export function registrarUsuario(method){
         documento: $form.documento.files[0]
     }
     
-    //const formData  = new FormData();
-    //formData.append('file', document.getElementById("documento").files[0]);
-    //for(const name in $form) {formData.append(name, $form[name]);}
-    //console.log(param);
     Ajax({
         url: "controller/usuarios.php",
         method, 

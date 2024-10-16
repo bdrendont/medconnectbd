@@ -13,6 +13,8 @@ export function listadoPacientesInformes(){
                 resp.data.forEach((el) => {
                     item += `<tr>
                               <td>${el.nombre_paciente}</td>
+                              <td><button class="status-button active">Disponible</button></td>
+                              <td><button class="btn btn-download"><i class="fas fa-download"></i> Descargar</button></td>
                             </tr>`;
                 });
                 $tinfo.children[1].innerHTML = item;

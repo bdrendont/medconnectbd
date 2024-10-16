@@ -38,3 +38,44 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
     header("HTTP/1.1 400");
     echo json_encode(['code'=>400,'msg' => 'Error, La peticion no se pudo procesar']);
 }
+
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    try {
+        $bd = new Configdb();
+        $conn = $bd->conexion();
+
+        // Obtener los datos enviados por el formulario
+        $nombre_sala = trim($_POST["nombre_sala"]);
+        $disponibilidad = trim($_POST["disponibilidad"]);
+
+        // Validación básica
+        if (empty($nombre_sala) || empty($disponibilidad)) {
+            header("HTTP/1.1 400 Bad Request");
+            echo json_encode(['code' => 400, 'msg' => 'Por favor complete todos los campos']);
+            exit;
+        }
+
+        // Insertar la nueva ubicación en la base de datos
+        $sql = "INSERT INTO ubicacion (nombre_ubicacion, estado) VALUES (:nombre_sala, :disponibilidad)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':nombre_sala', $nombre_sala, PDO::PARAM_STR);
+        $stmt->bindValue(':disponibilidad', $disponibilidad, PDO::PARAM_INT);
+
+        if ($stmt->execute()) {
+            header("HTTP/1.1 200 OK");
+            echo json_encode(['code' => 200, 'msg' => 'Ubicación registrada exitosamente']);
+        } else {
+            header("HTTP/1.1 500 Internal Server Error");
+            echo json_encode(['code' => 500, 'msg' => 'Error al registrar la ubicación']);
+        }
+
+        $stmt = null;
+        $conn = null;
+    } catch (PDOException $ex) {
+        header("HTTP/1.1 500 Internal Server Error");
+        echo json_encode(['code' => 500, 'msg' => 'Error interno al procesar su petición', 'error' => $ex->getMessage()]);
+    }
+}

@@ -8,30 +8,7 @@ if($_SERVER["REQUEST_METHOD"]=="PATCH"){
         $post = json_decode(file_get_contents('php://input'),true);
         
         if($post["nombres"]!="" && $post["email"]!="" && $post["indicativo"]!="" && $post["celular"]!="" && $post["identificacion"]!="" && $post["perfil"]!="" &&  $post["alias"]!="" && $post["password"]!=""){
-            //$post["documento_adj"]!="" &&
-            //echo $post["user"];
-
-            /*
             
-            // Obtenemos los valores enviados a través de AJAX
-            $json_post = json_decode(file_get_contents('php://input'), true) ?? null;
-
-            // En este caso el archivo no estará en $_FILES sino en en la URL php://input
-            if (!is_null($json_post) && isset($json_post['archivo'])) {
-                // Creamos el archivo y obtenemos su resource
-                $file = fopen($json_post['archivo']['name'], 'w+');
-                
-                // Parseamos a binario el base64
-                $bin = base64_decode($json_post['archivo']['content']);
-                
-                // Escribimos el archivo
-                fwrite($file, $bin);
-            
-                // Cerramos el archivo
-                fclose($file);
-            }
-
-            */
             $celular = $post["indicativo"].$post["celular"];
             $file = "";
             $bd = new ConfigDb();

@@ -3,7 +3,7 @@ import { link, salida } from "./tool.js";
 import { modalRecuperacionClave, closeModalResetPass, inicarSesion, validarToken, modalNewLocation, closeNewLocation, VerPerfil, closePerfil, VerEditPerfil } from "./login.js";
 import { registrarUsuario } from "./usuario.js";
 import { perfil } from "./acceso.js";
-import { listadoSala, modalEditarSala } from "./salas.js";
+import { listadoSala, modalEditarSala, registrarUbicacion } from "./salas.js";
 import { listadoPacientesInformes } from "./informes.js";
 
 
@@ -34,8 +34,13 @@ document.addEventListener('click', (e) => {
     if (e.target.matches("#iniciar-cuenta")) link("index.html") //Botón de ir a iniciar sesión
     if (e.target.matches("#ir-gestion-salas")) link("gestionsalas.html") //Botón de ir a gestion de salas
     if (e.target.matches("#btnExit")) salida()
-    if(e.target.matches(".sala_upd")) modalEditarSala(e.target)
-    if(e.target.matches(".sala_del")) modalEliminarSala(e.target)
+    
+    // Abrir editar ubicación
+    const button = e.target.closest(".sala_upd");
+    if (button) modalEditarSala(button);
+
+    if(e.target.matches(".sala_del")) modalEliminarSala(e.target);
+    if (button) modalEditarSala(button);
 });
 
 //El evento Submit de los Formularion
@@ -43,7 +48,7 @@ document.addEventListener("submit", (e) => {
     e.preventDefault();
     if (e.target.matches("#form-login")) inicarSesion("POST")
     if (e.target.matches("#form-newaccount")) registrarUsuario("PATCH")
-
+    if (e.target.matches("#form-new-location")) registrarUbicacion("POST")
 });
 
 ////////////////////////////////////////////////////////////////////

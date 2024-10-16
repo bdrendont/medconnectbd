@@ -32,7 +32,7 @@
                             <li><a class="dropdown-item" href="#" id="viewProfile"><i class="fas fa-user me-2"></i> Ver perfil</a></li>
 
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-sign-out-alt me-2"></i> Cerrar sesión</a></li>
+                            <li><a class="dropdown-item text-danger"  id="btnExit" href="#"><i class="fas fa-sign-out-alt me-2"></i> Cerrar sesión</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -50,14 +50,14 @@
                 <div class="col-md-3 mb-3">
                     <div class="card">
                         <div class="card-body text-center"> <!-- Clase text-center para centrar el contenido -->
-                            <h6 class="card-title">Paciente 1</h6>
-                            <p class="card-text">Detalles del paciente</p>
+                            <h6 class="card-title"><i class="fas fa-user-injured"></i> Paciente 1</h6> <!-- Ícono de paciente -->
+                            <p class="card-text">Ubicación del paciente</p>
                             <div class="d-flex justify-content-center"> <!-- Flexbox para centrar los botones -->
                                 <a href="#" class="btn btn-custom me-2" title="Programar medicación">
-                                    <i class="as fa-pills"></i> <!-- Ícono de reloj -->
+                                    <i class="fas fa-hourglass-half"></i> <!-- Ícono de reloj -->
                                 </a> 
                                 <button class="btn btn-custom" title="Agregar observaciones">
-                                    <i class="fas fa-sticky-note"></i> <!-- Ícono de observaciones -->
+                                    <i class="fas fa-file-alt"></i> <!-- Ícono de hoja y lápiz -->
                                 </button>
                             </div>
                         </div>
@@ -66,10 +66,15 @@
                 <div class="col-md-3 mb-3">
                     <div class="card">
                         <div class="card-body text-center"> <!-- Clase text-center para centrar el contenido -->
-                            <h6 class="card-title">Paciente 2</h6>
-                            <p class="card-text">Detalles del paciente.</p>
+                            <h6 class="card-title"><i class="fas fa-user-injured"></i> Paciente 2</h6> <!-- Ícono de paciente -->
+                            <p class="card-text">Ubicación del paciente</p>
                             <div class="d-flex justify-content-center"> <!-- Flexbox para centrar los botones -->
-                                <a href="#" class="btn btn-primary me-2">Ver perfil</a>
+                                <a href="#" class="btn btn-custom me-2" title="Programar medicación">
+                                    <i class="fas fa-hourglass-half"></i> <!-- Ícono de reloj -->
+                                </a> 
+                                <button class="btn btn-custom" title="Agregar observaciones">
+                                    <i class="fas fa-file-alt"></i> <!-- Ícono de hoja y lápiz -->
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -77,20 +82,32 @@
                 <div class="col-md-3 mb-3">
                     <div class="card">
                         <div class="card-body text-center"> <!-- Clase text-center para centrar el contenido -->
-                            <h6 class="card-title">Paciente 2</h6>
-                            <p class="card-text">Detalles del paciente</p>
+                            <h6 class="card-title"><i class="fas fa-user-injured"></i> Paciente 3</h6> <!-- Ícono de paciente -->
+                            <p class="card-text">Ubicación del paciente</p>
                             <div class="d-flex justify-content-center"> <!-- Flexbox para centrar los botones -->
-                                <a href="#" class="btn btn-primary me-2">Ver perfil</a>
+                                <a href="#" class="btn btn-custom me-2" title="Programar medicación">
+                                    <i class="fas fa-hourglass-half"></i> <!-- Ícono de reloj -->
+                                </a> 
+                                <button class="btn btn-custom" title="Agregar observaciones">
+                                    <i class="fas fa-file-alt"></i> <!-- Ícono de hoja y lápiz -->
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 mb-3">
                     <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Paciente 4</h5>
-                            <p class="card-text">Detalles del paciente.</p>
-                            <a href="#" class="btn btn-primary">Ver perfil</a>
+                        <div class="card-body text-center"> <!-- Clase text-center para centrar el contenido -->
+                            <h6 class="card-title"><i class="fas fa-user-injured"></i> Paciente 4</h6> <!-- Ícono de paciente -->
+                            <p class="card-text">Ubicación del paciente</p>
+                            <div class="d-flex justify-content-center"> <!-- Flexbox para centrar los botones -->
+                                <a href="#" class="btn btn-custom me-2" title="Programar medicación">
+                                    <i class="fas fa-hourglass-half"></i> <!-- Ícono de reloj -->
+                                </a> 
+                                <button class="btn btn-custom" title="Agregar observaciones">
+                                    <i class="fas fa-file-alt"></i> <!-- Ícono de hoja y lápiz -->
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -100,39 +117,64 @@
                 <div class="col-md-3 mb-3">
                     <div class="card">
                         <div class="card-body text-center"> <!-- Clase text-center para centrar el contenido -->
-                            <h6 class="card-title">Paciente 1</h6>
-                            <p class="card-text">Detalles del paciente</p>
+                            <h6 class="card-title"><i class="fas fa-user-injured"></i> Paciente 5</h6> <!-- Ícono de paciente -->
+                            <p class="card-text">Ubicación del paciente</p>
                             <div class="d-flex justify-content-center"> <!-- Flexbox para centrar los botones -->
-                                <a href="#" class="btn btn-custom me-2">Programar medicación</a> <!-- Agregar me-2 para margen -->
-                                <button class="btn btn-custom">Agregar observaciones</button>
+                                <a href="#" class="btn btn-custom me-2" title="Programar medicación">
+                                    <i class="fas fa-hourglass-half"></i> <!-- Ícono de reloj -->
+                                </a> 
+                                <button class="btn btn-custom" title="Agregar observaciones">
+                                    <i class="fas fa-file-alt"></i> <!-- Ícono de hoja y lápiz -->
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 mb-3">
                     <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Paciente 6</h5>
-                            <p class="card-text">Detalles del paciente.</p>
-                            <a href="#" class="btn btn-primary">Ver perfil</a>
+                        <div class="card-body text-center"> <!-- Clase text-center para centrar el contenido -->
+                            <h6 class="card-title"><i class="fas fa-user-injured"></i> Paciente 6</h6> <!-- Ícono de paciente -->
+                            <p class="card-text">Ubicación del paciente</p>
+                            <div class="d-flex justify-content-center"> <!-- Flexbox para centrar los botones -->
+                                <a href="#" class="btn btn-custom me-2" title="Programar medicación">
+                                    <i class="fas fa-hourglass-half"></i> <!-- Ícono de reloj -->
+                                </a> 
+                                <button class="btn btn-custom" title="Agregar observaciones">
+                                    <i class="fas fa-file-alt"></i> <!-- Ícono de hoja y lápiz -->
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 mb-3">
                     <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Paciente 7</h5>
-                            <p class="card-text">Detalles del paciente.</p>
-                            <a href="#" class="btn btn-primary">Ver perfil</a>
+                        <div class="card-body text-center"> <!-- Clase text-center para centrar el contenido -->
+                            <h6 class="card-title"><i class="fas fa-user-injured"></i> Paciente 7</h6> <!-- Ícono de paciente -->
+                            <p class="card-text">Ubicación del paciente</p>
+                            <div class="d-flex justify-content-center"> <!-- Flexbox para centrar los botones -->
+                                <a href="#" class="btn btn-custom me-2" title="Programar medicación">
+                                    <i class="fas fa-hourglass-half"></i> <!-- Ícono de reloj -->
+                                </a> 
+                                <button class="btn btn-custom" title="Agregar observaciones">
+                                    <i class="fas fa-file-alt"></i> <!-- Ícono de hoja y lápiz -->
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 mb-3">
                     <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Paciente 8</h5>
-                            <p class="card-text">Detalles del paciente.</p>
-                            <a href="#" class="btn btn-primary">Ver perfil</a>
+                        <div class="card-body text-center"> <!-- Clase text-center para centrar el contenido -->
+                            <h6 class="card-title"><i class="fas fa-user-injured"></i> Paciente 8</h6> <!-- Ícono de paciente -->
+                            <p class="card-text">Ubicación del paciente</p>
+                            <div class="d-flex justify-content-center"> <!-- Flexbox para centrar los botones -->
+                                <a href="#" class="btn btn-custom me-2" title="Programar medicación">
+                                    <i class="fas fa-hourglass-half"></i> <!-- Ícono de reloj -->
+                                </a> 
+                                <button class="btn btn-custom" title="Agregar observaciones">
+                                    <i class="fas fa-file-alt"></i> <!-- Ícono de hoja y lápiz -->
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -142,39 +184,64 @@
                 <div class="col-md-3 mb-3">
                     <div class="card">
                         <div class="card-body text-center"> <!-- Clase text-center para centrar el contenido -->
-                            <h6 class="card-title">Paciente 1</h6>
-                            <p class="card-text">Detalles del paciente</p>
+                            <h6 class="card-title"><i class="fas fa-user-injured"></i> Paciente 9</h6> <!-- Ícono de paciente -->
+                            <p class="card-text">Ubicación del paciente</p>
                             <div class="d-flex justify-content-center"> <!-- Flexbox para centrar los botones -->
-                                <a href="#" class="btn btn-custom me-2">Programar medicación</a> <!-- Agregar me-2 para margen -->
-                                <button class="btn btn-custom">Agregar observaciones</button>
+                                <a href="#" class="btn btn-custom me-2" title="Programar medicación">
+                                    <i class="fas fa-hourglass-half"></i> <!-- Ícono de reloj -->
+                                </a> 
+                                <button class="btn btn-custom" title="Agregar observaciones">
+                                    <i class="fas fa-file-alt"></i> <!-- Ícono de hoja y lápiz -->
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 mb-3">
                     <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Paciente 10</h5>
-                            <p class="card-text">Detalles del paciente.</p>
-                            <a href="#" class="btn btn-primary">Ver perfil</a>
+                        <div class="card-body text-center"> <!-- Clase text-center para centrar el contenido -->
+                            <h6 class="card-title"><i class="fas fa-user-injured"></i> Paciente 10</h6> <!-- Ícono de paciente -->
+                            <p class="card-text">Ubicación del paciente</p>
+                            <div class="d-flex justify-content-center"> <!-- Flexbox para centrar los botones -->
+                                <a href="#" class="btn btn-custom me-2" title="Programar medicación">
+                                    <i class="fas fa-hourglass-half"></i> <!-- Ícono de reloj -->
+                                </a> 
+                                <button class="btn btn-custom" title="Agregar observaciones">
+                                    <i class="fas fa-file-alt"></i> <!-- Ícono de hoja y lápiz -->
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 mb-3">
                     <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Paciente 11</h5>
-                            <p class="card-text">Detalles del paciente.</p>
-                            <a href="#" class="btn btn-primary">Ver perfil</a>
+                        <div class="card-body text-center"> <!-- Clase text-center para centrar el contenido -->
+                            <h6 class="card-title"><i class="fas fa-user-injured"></i> Paciente 11</h6> <!-- Ícono de paciente -->
+                            <p class="card-text">Ubicación del paciente</p>
+                            <div class="d-flex justify-content-center"> <!-- Flexbox para centrar los botones -->
+                                <a href="#" class="btn btn-custom me-2" title="Programar medicación">
+                                    <i class="fas fa-hourglass-half"></i> <!-- Ícono de reloj -->
+                                </a> 
+                                <button class="btn btn-custom" title="Agregar observaciones">
+                                    <i class="fas fa-file-alt"></i> <!-- Ícono de hoja y lápiz -->
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 mb-3">
                     <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Paciente 12</h5>
-                            <p class="card-text">Detalles del paciente.</p>
-                            <a href="#" class="btn btn-primary">Ver perfil</a>
+                        <div class="card-body text-center"> <!-- Clase text-center para centrar el contenido -->
+                            <h6 class="card-title"><i class="fas fa-user-injured"></i> Paciente 12</h6> <!-- Ícono de paciente -->
+                            <p class="card-text">Ubicación del paciente</p>
+                            <div class="d-flex justify-content-center"> <!-- Flexbox para centrar los botones -->
+                                <a href="#" class="btn btn-custom me-2" title="Programar medicación">
+                                    <i class="fas fa-hourglass-half"></i> <!-- Ícono de reloj -->
+                                </a> 
+                                <button class="btn btn-custom" title="Agregar observaciones">
+                                    <i class="fas fa-file-alt"></i> <!-- Ícono de hoja y lápiz -->
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

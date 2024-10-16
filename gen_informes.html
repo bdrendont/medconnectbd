@@ -29,7 +29,7 @@
                             <li><a class="dropdown-item" href="#" id="viewProfile"><i class="fas fa-user me-2"></i> Ver perfil</a></li>
 
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-sign-out-alt me-2"></i> Cerrar sesión</a></li>
+                            <li><a class="dropdown-item text-danger"  id="btnExit" href="#"><i class="fas fa-sign-out-alt me-2"></i> Cerrar sesión</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -44,7 +44,8 @@
                 <thead>
                     <tr>
                         <th>Nombre de paciente</th>
-                        <th>Descarga de informe</th>
+                        <th>Estado de informe</th>
+                        <th>Descarga</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -59,12 +60,6 @@
                     </tr>
                 </tbody>
             </table>
-            <td>
-                <button class="status-button active">Disponible</button>
-                <button class="btn btn-download">
-                    <i class="fas fa-download"></i> Descargar
-                </button>
-            </td>
         </div>
     </div>
     
