@@ -39,8 +39,9 @@ export function VerEditPerfil() {
 export function VerTbMedicamentos() {
     document.getElementById('ProgramadorMedicamentosPaciente').style.display = 'block';
 }
-export function VerObservaciones() {
+export function VerObservaciones(obs) {
     document.getElementById('Consolidadodeobservaciones').style.display = 'block';
+    Consolidadodeobservaciones.innerHTML=`<h5>Observaciones</h5><p>${obs}</p><button type="button" id="cancelEdit" class="btn btn-nosave">Cerrar</button>`;
 }
 //Funcion de Iniciar Sesion
 export function inicarSesion(method) {

@@ -5,6 +5,7 @@ import { registrarUsuario } from "./usuario.js";
 import { perfil } from "./acceso.js";
 import { listadoSala, modalEditarSala, registrarUbicacion } from "./salas.js";
 import { listadoPacientesInformes } from "./informes.js";
+import { listadoPacientes } from "./pacientes.js";
 
 
 
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     if (path.includes("accesos")) perfil()
     if (path.includes("gestionsalas")) { perfil(); listadoSala(); }
     if (path.includes("gen_informes")) { perfil(); listadoPacientesInformes(); }
-    if (path.includes("mis_salas")) perfil()
+    if (path.includes("mis_salas")) {perfil(); listadoPacientes();}
     if (path.includes("notificaciones")) perfil()
 });
 
@@ -30,8 +31,9 @@ document.addEventListener('click', (e) => {
     if (e.target.matches("#newubi")) modalNewLocation()
     if (e.target.matches("#viewProfile")) VerPerfil()
     if (e.target.matches("#edit-profile")) VerEditPerfil()
-    if (e.target.matches("#programarmed")) VerTbMedicamentos()
-    if (e.target.matches("#observacionesPac")) VerObservaciones()
+    if (e.target.matches("#programarmed")) VerTbMedicamentos(e.target.dataset.id)
+    if (e.target.matches("#observacionesPac")) VerObservaciones(e.target.dataset.obs)
+    if (e.target.matches("#cancelEdit")) e.target.parentNode.style.display = 'none'
     
 
     if (e.target.matches("#nueva-cuenta")) link("newaccount.html") //Botón de ir a crear cuenta
