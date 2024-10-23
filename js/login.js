@@ -35,11 +35,13 @@ export function VerEditPerfil() {
     document.getElementById('EditInfoPerfil').style.display = 'block';
 }
 
-// Función para tarjeta de Editar perfil
-export function closeEditPerfil() {
-    document.getElementById('EditInfoPerfil').style.display = 'none';
+// Función para ver tabla medicamentos
+export function VerTbMedicamentos() {
+    document.getElementById('ProgramadorMedicamentosPaciente').style.display = 'block';
 }
-
+export function VerObservaciones() {
+    document.getElementById('Consolidadodeobservaciones').style.display = 'block';
+}
 //Funcion de Iniciar Sesion
 export function inicarSesion(method) {
     let user = document.getElementById("email").value;

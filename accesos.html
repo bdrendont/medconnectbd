@@ -39,10 +39,10 @@
     </nav>
     
       
-      <div class="contenedor">
+    <div class="contenedor">
         <div class="container my-4 pb-5">
             <!-- Primera Fila: Carta Gestión de Salas -->
-            <div class="row g-3"> <!-- Cambié g-4 a g-3 para reducir el espaciado entre filas -->
+            <div class="row g-3">
                 <div class="col-md-8 mx-auto">
                     <div class="card access-card">
                         <div class="card-body text-center">
@@ -69,21 +69,40 @@
                 </div>
             </div>
     
-            <!-- Tercera Fila: Carta Mis Salas Públicas -->
+            <!-- Tercera Fila: Carta Mis Salas Públicas dividida en dos columnas -->
             <div class="row g-3 mt-2">
-                <div class="col-md-8 mx-auto">
-                    <div class="card access-card">
-                        <div class="card-body text-center">
-                            <i class="fas fa-users icon-card mb-3"></i>
-                            <h5 class="card-title">Mis pacientes</h5>
-                            <p class="card-text">Gestiona y accede a los datos de tus pacientes.</p>
-                            <a href="" class="btn btn-custom" onclick="window.location.href='mis_salas.html';">Ir a Mis Pacientes</a>
+                <div class="col-md-8 mx-auto"> <!-- Envuelve las dos columnas dentro de un contenedor centralizado -->
+                    <div class="row">
+                        <div class="col-md-6"> <!-- Primera columna -->
+                            <div class="card access-card">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-users icon-card mb-3"></i>
+                                    <h5 class="card-title">Mis pacientes</h5>
+                                    <p class="card-text">Gestiona y accede a los datos de tus pacientes.</p>
+                                    <a href="" class="btn btn-custom" onclick="window.location.href='mis_salas.html';">Ir a Mis Pacientes</a>
+                                </div>
+                            </div>
                         </div>
+    
+                        <div class="col-md-6"> <!-- Segunda columna -->
+                            <div class="card access-card position-relative">
+                                <!-- Círculo Verde -->
+                                <div class="notification-circle"></div>
+                                <div class="card-body text-center">
+                                    <i class="fas fa-bell icon-card mb-3"></i>
+                                    <h5 class="card-title">Notificaciones de medicación</h5>
+                                    <p class="card-text">Revisa las alertas y recordatorios de medicación.</p>
+                                    <a href="" class="btn btn-custom" onclick="window.location.href='notificaciones.html';">Ir a Mis Notificaciones</a>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
-        </div>       
-      </div> 
+        </div>
+    </div>
+     
     
      
 <!-- Tarjeta Flotante del Perfil -->
@@ -125,7 +144,6 @@
                     <option value="perfil3">Sala Privada</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-save" id="edit-profile">Editar perfil</button>
             <button type="button" id="cancelEdit" class="btn btn-nosave">Cerrar</button>
         </form>
     </div>

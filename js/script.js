@@ -1,6 +1,6 @@
 //Importaciones de Modulos
 import { link, salida } from "./tool.js";
-import { modalRecuperacionClave, closeModalResetPass, inicarSesion, validarToken, modalNewLocation, closeNewLocation, VerPerfil, closePerfil, VerEditPerfil } from "./login.js";
+import { modalRecuperacionClave, VerObservaciones, closeModalResetPass, inicarSesion, validarToken, modalNewLocation, closeNewLocation, VerPerfil, closePerfil, VerEditPerfil, VerTbMedicamentos, VerObservaciones } from "./login.js";
 import { registrarUsuario } from "./usuario.js";
 import { perfil } from "./acceso.js";
 import { listadoSala, modalEditarSala, registrarUbicacion } from "./salas.js";
@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     if (path.includes("gestionsalas")) { perfil(); listadoSala(); }
     if (path.includes("gen_informes")) { perfil(); listadoPacientesInformes(); }
     if (path.includes("mis_salas")) perfil()
+    if (path.includes("notificaciones")) perfil()
 });
 
 // Evento click del DOM
@@ -29,6 +30,9 @@ document.addEventListener('click', (e) => {
     if (e.target.matches("#newubi")) modalNewLocation()
     if (e.target.matches("#viewProfile")) VerPerfil()
     if (e.target.matches("#edit-profile")) VerEditPerfil()
+    if (e.target.matches("#programarmed")) VerTbMedicamentos()
+    if (e.target.matches("#observacionesPac")) VerObservaciones()
+    
 
     if (e.target.matches("#nueva-cuenta")) link("newaccount.html") //Botón de ir a crear cuenta
     if (e.target.matches("#iniciar-cuenta")) link("index.html") //Botón de ir a iniciar sesión
@@ -41,6 +45,15 @@ document.addEventListener('click', (e) => {
 
     if(e.target.matches(".sala_del")) modalEliminarSala(e.target);
     if (button) modalEditarSala(button);
+
+    // Funcionalidad de quiénes somos
+    if (e.target.matches("#open-sidebar")) {
+        document.getElementById("sidebar").classList.add("active");
+    }
+
+    if (e.target.matches("#close-sidebar") || e.target.closest("#close-sidebar")) {
+        document.getElementById("sidebar").classList.remove("active");
+    }
 });
 
 //El evento Submit de los Formularion

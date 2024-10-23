@@ -1117,3 +1117,39 @@ body {
 .btn-download:hover {
     background-color: #2980b9;
 }
+
+.notification-icon {
+    position: relative;
+}
+
+.notification-dot {
+    position: absolute;
+    top: -5px; /* Ajusta la posición vertical */
+    right: -5px; /* Ajusta la posición horizontal */
+    width: 10px; /* Ajusta el tamaño del punto */
+    height: 10px; /* Ajusta el tamaño del punto */
+    background-color: green; /* Color del punto */
+    border-radius: 50%; /* Hace que sea un círculo */
+    display: inline-block;
+}
+
+.notification-circle {
+    width: 20px; /* Tamaño del círculo */
+    height: 20px; /* Tamaño del círculo */
+    background-color: #28a745; /* Color verde */
+    border-radius: 50%; /* Hacer que el div sea un círculo */
+    position: absolute; /* Posición absoluta */
+    top: 10px; /* Ajusta la posición desde la parte superior */
+    right: 10px; /* Ajusta la posición desde la derecha */
+}
+
+/* Aumentar el ancho del modal de medicamentos */
+#ProgramadorMedicamentosPaciente {
+    max-width: 800px; /* Ajusta este valor según sea necesario */
+    width: 100%; /* Asegura que el modal ocupe el 100% del ancho máximo establecido */
+}
+
+/* Aumentar el ancho de la tabla dentro del modal si es necesario */
+#ProgramadorMedicamentosPaciente .table {
+    width: 100%; /* Asegura que la tabla ocupe todo el ancho disponible */
+}
