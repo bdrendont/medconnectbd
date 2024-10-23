@@ -1,6 +1,6 @@
 //Importaciones de Modulos
 import { link, salida } from "./tool.js";
-import { modalRecuperacionClave, VerObservaciones, closeModalResetPass, inicarSesion, validarToken, modalNewLocation, closeNewLocation, VerPerfil, closePerfil, VerEditPerfil, VerTbMedicamentos, VerObservaciones } from "./login.js";
+import { modalRecuperacionClave, VerObservaciones, closeModalResetPass, inicarSesion, validarToken, modalNewLocation, closeNewLocation, VerPerfil, closePerfil, VerEditPerfil, VerTbMedicamentos } from "./login.js";
 import { registrarUsuario } from "./usuario.js";
 import { perfil } from "./acceso.js";
 import { listadoSala, modalEditarSala, registrarUbicacion } from "./salas.js";
