@@ -95,7 +95,7 @@
     <h5>Editar Ubicación</h5>
     <form id="fe_sala" name="fe_sala" method="POST" action="">
         <div class="mb-3">
-            <input type="hidden" id="eid_sala" name="eid_sala">
+            <input type="hidden" id="eid_sala" name="eid_sala" required>
             <input type="text" id="enom_sala" name="enom_sala" class="form-control" placeholder="Ingrese el nombre de la sala" required>
         </div>
         <select class="form-control" id="eestado" name="eestado" required>
@@ -104,7 +104,7 @@
         </select>
         <br>
         <div class="confirmation-buttons">
-            <button type="button" class="btn btn-cancel" onclick="registrarUbicacion('POST')">Editar Ubicación</button>
+            <button type="submit" class="btn btn-cancel">Editar Ubicación</button>
             <button type="button" class="btn btn-confirm btn-close-modal">Cancelar</button>
         </div>
     </form>
@@ -115,7 +115,8 @@
     <h5>¿Desea eliminar esta ubicación?</h5>
     <form id="del_sala" name="del_sala" action="">
         <div class="confirmation-buttons">
-            <button type="button" class="btn btn-cancel">Aceptar</button>
+            <input type="hidden" id="did_sala" name="did_sala" required>
+            <button type="submit" class="btn btn-cancel">Aceptar</button>
             <button type="button" class="btn btn-confirm btn-close-modal">Cancelar</button>
         </div>
     </form>

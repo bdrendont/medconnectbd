@@ -20,10 +20,10 @@ export function listadoSala() {
                               </td>
                               <td>
                               <div class='group-button'>
-                              <button class="btn btn-primary btn-sm sala_upd" data-id="${el.id_ubicacion}" data-nom="${el.nombre_ubicacion}" data-est="${el.estados}" onclick="modalEditarSala(this)">
+                              <button class="btn btn-primary btn-sm sala_upd" data-id="${el.id_ubicacion}" data-nom="${el.nombre_ubicacion}" data-est="${el.estados}">
                                   <i class="fas fa-pencil-alt"></i>
                               </button>
-                              <button class='btn btn-danger btn-sm sala_del' data-id='${el.id_ubicacion}' onclick="modalEliminarSala(this)">
+                              <button class='btn btn-danger btn-sm sala_del' data-id="${el.id_ubicacion}">
                                   <i class="fas fa-trash-alt"></i>
                               </button>
                               </div>
@@ -49,7 +49,7 @@ export function modalEditarSala(el) {
 
 // Función para abrir el modal de eliminación de sala
 export function modalEliminarSala(el) {
-    
+    did_sala.value = el.dataset.id;
     DeleteLocationModal.style.display = 'block';
 }
 
@@ -80,5 +80,54 @@ export function registrarUbicacion(method) {
     });
 }
 
+export function actualizarUbicacion(method){
 
+    let $form = document.getElementById("fe_sala");
+
+    // Crear un objeto param con los datos del formulario
+    let param = {
+        id_sala: eid_sala.value,
+        nombre_sala: enom_sala.value,
+        disponibilidad: eestado.value
+    };
+
+    console.log(param)
+    // Llamada AJAX para enviar los datos al servidor
+    Ajax({
+        url: "controller/salas.php", // Asegúrate de que esta URL sea correcta
+        method,
+        param,
+        fSuccess: (resp) => {
+            if (resp.code === 200) {
+                alert("La ubicación se actualizó correctamente");
+                listadoSala(); // Actualiza la lista de salas
+            } else {
+                alert(resp.msg); // Muestra mensaje de error si la respuesta no es exitosa
+            }
+            $form.parentNode.style.display = 'none'; // Cierra el formulario
+        }
+    });
+}
+
+
+export function eliminarUbicacion(method){
+    let $form = document.getElementById("del_sala");
+
+    //alert("Queremos eliminar el ID: "+did_sala.value+ " Protocolo: "+method)
+    // Llamada AJAX para enviar los datos al servidor
+    Ajax({
+        url: "controller/salas.php", // Asegúrate de que esta URL sea correcta
+        method,
+        param: {id_sala: did_sala.value},
+        fSuccess: (resp) => {
+            if (resp.code === 200) {
+                alert("La ubicación se eliminó correctamente");
+                listadoSala(); // Actualiza la lista de salas
+            } else {
+                alert(resp.msg); // Muestra mensaje de error si la respuesta no es exitosa
+            }
+            $form.parentNode.style.display = 'none'; // Cierra el formulario
+        }
+    });
+}
 

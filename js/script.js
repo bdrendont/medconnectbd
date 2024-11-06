@@ -3,7 +3,7 @@ import { link, salida } from "./tool.js";
 import { modalRecuperacionClave, VerObservaciones, inicarSesion, validarToken, modalNewLocation, VerPerfil, VerEditPerfil, VerTbMedicamentos, AgregarPaciente, EnlaceWhatsApp } from "./login.js";
 import { registrarUsuario } from "./usuario.js";
 import { perfil } from "./acceso.js";
-import { listadoSala, modalEditarSala, modalEliminarSala, registrarUbicacion } from "./salas.js";
+import { listadoSala, modalEditarSala, modalEliminarSala, registrarUbicacion , actualizarUbicacion, eliminarUbicacion} from "./salas.js";
 import { listadoPacientesInformes } from "./informes.js";
 import { listadoPacientes } from "./pacientes.js";
 
@@ -72,4 +72,6 @@ document.addEventListener("submit", (e) => {
     if (e.target.matches("#form-login")) inicarSesion("POST")
     if (e.target.matches("#form-newaccount")) registrarUsuario("PATCH")
     if (e.target.matches("#form-new-location")) registrarUbicacion('POST')
+    if (e.target.matches("#fe_sala")) actualizarUbicacion("PUT")
+    if (e.target.matches("#del_sala")) eliminarUbicacion("DELETE")
 });

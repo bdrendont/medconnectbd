@@ -73,36 +73,47 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
         echo json_encode(['code' => 500, 'msg' => 'Error interno al procesar su petición', 'error' => $ex->getMessage()]);
     }
 
-} else if ($_SERVER["REQUEST_METHOD"]== "DELETE") {
-    $post = json_decode(file_get_contents('php://input'), true);
-    if (!empty($post["id"])) {
-        $sql = "DELETE FROM ubicacion WHERE id_ubicacion = :id";
-        $stmt = $conn->prepare($sql);
-        $stmt->bindValue(':id', $post["id"], PDO::PARAM_INT);
-        if ($stmt->execute()) {
-            header("HTTP/1.1 200 OK");
-            echo json_encode(['code' => 200, 'msg' => "Ubicación eliminada con éxito"]);
-        } else {
-            throw new Exception("Error al eliminar la ubicación");
-        }
-    } else {
-        throw new Exception("ID de la ubicación requerida");
-    }
-}
-
-else if ($_SERVER["REQUEST_METHOD"] == "PUT") {
+} else if ($_SERVER["REQUEST_METHOD"] == "DELETE") {
     try {
+        
+        $bd = new Configdb();
+        $conn = $bd->conexion();
+
+        $post = json_decode(file_get_contents('php://input'), true);
+        if (!empty($post["id_sala"])) {
+            $sql = "DELETE FROM ubicacion WHERE id_ubicacion = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(':id', $post["id_sala"], PDO::PARAM_INT);
+            if ($stmt->execute()) {
+                header("HTTP/1.1 200 OK");
+                echo json_encode(['code' => 200, 'msg' => "Ubicación eliminada con éxito"]);
+            } else {
+                throw new Exception("Error al eliminar la ubicación");
+            }
+        } else {
+            throw new Exception("ID de la ubicación requerida");
+        }
+    } catch (Exception $e) {
+        header("HTTP/1.1 500 Internal Server Error");
+        echo json_encode(['code' => 500, 'msg' => $e->getMessage()]);
+    }
+} else if ($_SERVER["REQUEST_METHOD"] == "PUT") {
+    try {
+        
+        $bd = new Configdb();
+        $conn = $bd->conexion();
+
         $post = json_decode(file_get_contents('php://input'), true);
 
-        if (!empty($post["id_ubicacion"]) && !empty($post["nombre_ubicacion"]) && !empty($post["estados"])) {
+        if (!empty($post["id_sala"]) && !empty($post["nombre_sala"]) && !empty($post["disponibilidad"])) {
             $sql = "UPDATE ubicacion 
                     SET nombre_ubicacion = :nombre_ubicacion, estados = :estados 
                     WHERE id_ubicacion = :id_ubicacion";
 
             $stmt = $conn->prepare($sql);
-            $stmt->bindValue(':id_ubicacion', $post["id_ubicacion"], PDO::PARAM_INT);
-            $stmt->bindValue(':nombre_ubicacion', $post["nombre_ubicacion"], PDO::PARAM_STR);
-            $stmt->bindValue(':estados', $post["estados"], PDO::PARAM_STR);
+            $stmt->bindValue(':id_ubicacion', $post["id_sala"], PDO::PARAM_INT);
+            $stmt->bindValue(':nombre_ubicacion', $post["nombre_sala"], PDO::PARAM_STR);
+            $stmt->bindValue(':estados', $post["disponibilidad"], PDO::PARAM_STR);
 
             if ($stmt->execute()) {
                 header("HTTP/1.1 200 OK");
@@ -121,11 +132,7 @@ else if ($_SERVER["REQUEST_METHOD"] == "PUT") {
         header("HTTP/1.1 500 Internal Server Error");
         echo json_encode(['code' => 500, 'msg' => $e->getMessage()]);
     }
-}
-
-
-
-else {
+} else {
     header("HTTP/1.1 400");
     echo json_encode(['code'=>400,'msg' => 'Error, La peticion no se pudo procesar']);
 }
