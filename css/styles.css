@@ -1153,3 +1153,18 @@ body {
 #ProgramadorMedicamentosPaciente .table {
     width: 100%; /* Asegura que la tabla ocupe todo el ancho disponible */
 }
+
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 20px; /* Aumenta el margen a la derecha */
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333; /* O el color que prefieras */
+    transition: color 0.3s ease;
+}
+
+.close-icon:hover {
+    color: #F39C12; /* Cambia al color deseado al pasar el cursor */
+}
+

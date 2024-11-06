@@ -39,6 +39,17 @@ export function VerEditPerfil() {
 export function VerTbMedicamentos() {
     document.getElementById('ProgramadorMedicamentosPaciente').style.display = 'block';
 }
+
+// Modal agregar paciente
+export function AgregarPaciente() {
+    document.getElementById('NewPacienteModal').style.display = 'block';
+} 
+
+// Modal WhatsApp
+export function EnlaceWhatsApp() {
+    document.getElementById('WhatsAppModal').style.display = 'block';
+} 
+
 export function VerObservaciones(obs) {
     document.getElementById('Consolidadodeobservaciones').style.display = 'block';
     Consolidadodeobservaciones.innerHTML=`<h5>Observaciones</h5><p>${obs}</p><button type="button" id="cancelEdit" class="btn btn-nosave">Cerrar</button>`;

@@ -20,6 +20,14 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto d-flex align-items-center">
                     <!-- Apartado de Perfil Estético -->
+                     <!-- Botón de Agregar Paciente -->
+                     <li class="nav-item" style="margin-right: 10px;">
+                        <a class="btn btn-footer" href="javascript:void(0)" id="addPatientButton">
+                            <i class="fas fa-user-plus me-2" id="ButtonNewPac"></i> Agregar Paciente
+                        </a>
+                    </li>
+                    
+                    
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle d-flex align-items-center profile-link" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-user-circle fa-2x"></i> 
@@ -27,15 +35,16 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="profileDropdown">
                             <li><a class="dropdown-item" href="#" id="viewProfile"><i class="fas fa-user me-2"></i> Ver perfil</a></li>
-
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item text-danger"  id="btnExit" href="#"><i class="fas fa-sign-out-alt me-2"></i> Cerrar sesión</a></li>
+                            <li><a class="dropdown-item text-danger" id="btnExit" href="#"><i class="fas fa-sign-out-alt me-2"></i> Cerrar sesión</a></li>
                         </ul>
                     </li>
+                    
                 </ul>
             </div>
         </div>
     </nav>
+    
     
       
     
@@ -144,7 +153,7 @@
                 <button class="btn btn-footer" onclick="location.href='gen_informes.html'">
                     <i class="fas fa-table fa-lg" style="color: white;"></i> Generación de informes
                 </button>
-                <button class="btn btn-footer" onclick="window.location.href='notificaciones.html.html';">
+                <button class="btn btn-footer" onclick="window.location.href='notificaciones.html';">
                     <i class="fas fa-bell" style="color: white;"></i> Ir a mis notificaciones
                 </button>                
                 <button class="btn btn-footer" onclick="window.location.href='accesos.html';">
@@ -193,8 +202,23 @@
 </div>
 
 <!-- Modal de Observaciones -->
-<div id="Consolidadodeobservaciones" class="confirmation-card">
-    
+<div id="Consolidadodeobservaciones" class="confirmation-card"> </div>
+
+<!-- Modal Nuevo Usuario -->
+<div id="NewPacienteModal" class="confirmation-card">
+    <h5>Agregar Paciente</h5>
+    <form>
+            <div class="mb-3">
+                <input type="text" name="nombre_paciente" class="form-control" placeholder="Ingrese el nombre del paciente" required>
+            </div>
+            <select name="ubicacion" class="form-control" required>
+                <option value="Disponible">UCI</option>
+                <option value="No disponible">URGENCIAS</option>
+            </select>
+            <br>
+            <button type="button" class="btn btn-cancel">Agregar Paciente</button>
+            <button type="button" id="cancelEdit" class="btn btn-nosave">Cancelar</button>
+    </form>
 </div>
 
 <!-- Tarjeta Flotante del Perfil -->
@@ -214,8 +238,7 @@
         <p><strong>Tipo de Perfil:</strong> <span id="profileType">Usuario</span></p>
         <br>
         <div class="confirmation-buttons">
-            <button type="submit" class="btn btn-cancel">Editar perfil</button>
-            <button type="button" class="btn btn-confirm btn-close-modal">Cancelar</button>
+            <button type="button" class="btn btn-confirm btn-close-modal">Cerrar</button>
         </div>
     </div>
     <div class="profile-edit" id="profileEdit" style="display: none;">

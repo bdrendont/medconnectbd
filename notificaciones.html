@@ -20,6 +20,17 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto d-flex align-items-center">
                     <!-- Apartado de Perfil Estético -->
+                     <!-- Botón de Agregar Paciente -->
+                     <!-- Botón WhatsApp -->
+<a class="btn btn-footer" href="javascript:void(0)" id="WhatsApp" 
+   style="background-color: #25D366; color: white; border-radius: 5px; padding: 10px 15px; display: flex; align-items: center; transition: all 0.3s;" 
+   onmouseover="this.style.backgroundColor='#128C7E'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.2)';" 
+   onmouseout="this.style.backgroundColor='#25D366'; this.style.boxShadow='none';">
+    <i class="fab fa-whatsapp me-2" style="font-size: 1.5em;"></i>
+    <span style="font-size: 1em;">WhatsApp</span>
+</a>
+
+                    
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle d-flex align-items-center profile-link" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-user-circle fa-2x"></i> <!-- Icono de perfil -->
@@ -111,49 +122,36 @@
     </footer>
     
      
-<!-- Tarjeta Flotante del Perfil -->
-<div class="profile-card" id="profileCard">
-    <div class="profile-header">
-        
-        <div class="user-icon">
-            <i class="fas fa-user fa-4x" style="color: #F39C12;"></i>
+    <div class="profile-card" id="profileCard">
+        <div class="profile-header">
+            <div class="user-icon">
+                <i class="fas fa-user fa-4x" style="color: #F39C12;"></i>
+            </div>
+            <br>
+            <h5>Nombre del Perfil</h5>
         </div>
-        <br>
-        <h5>Nombre del Perfil</h5>
+        <div class="profile-info" id="profileInfo">
+            <p><strong>Identificación:</strong> 123456789</p>
+            <p><strong>Correo:</strong> <span id="profileEmail">ejemplo@correo.com</span></p>
+            <p><strong>Celular:</strong> <span id="profilePhone">123-456-7890</span></p>
+            <p><strong>Tipo de Perfil:</strong> <span id="profileType">Usuario</span></p>
+            <br>
+            <div class="confirmation-buttons">
+                <button type="button" class="btn btn-confirm btn-close-modal">Cerrar</button>
+            </div>
+        </div>
     </div>
-    <div class="profile-info" id="profileInfo">
-        <p><strong>Identificación:</strong> 123456789</p>
-        <p><strong>Correo:</strong> <span id="profileEmail">ejemplo@correo.com</span></p>
-        <p><strong>Celular:</strong> <span id="profilePhone">123-456-7890</span></p>
-        <p><strong>Tipo de Perfil:</strong> <span id="profileType">Usuario</span></p>
-        <br>
+    
+
+<!-- Modal WhatsApp -->
+<div id="WhatsAppModal" class="confirmation-card">
+    <h5>¿Desea recibir notificaciones a 3218899964?</h5>
+    <form>
         <div class="confirmation-buttons">
-            <button type="submit" class="btn btn-cancel">Editar perfil</button>
+            <button type="button" class="btn btn-cancel" id="acceptWhatsApp">Aceptar</button>
             <button type="button" class="btn btn-confirm btn-close-modal">Cancelar</button>
         </div>
-    </div>
-    <div class="profile-edit" id="profileEdit" style="display: none;">
-        <form id="editProfileForm">
-            <div>
-                <label for="email"><strong>Nuevo correo:</strong></label>
-                <input type="email" id="email" name="email" value="ejemplo@correo.com">
-            </div>
-            <div>
-                <label for="phone"><strong>Nuevo número de celular:</strong></label>
-                <input type="tel" id="phone" name="phone" value="123-456-7890">
-            </div>
-            <div>
-                <label for="type"><strong>Seleccione tipo de perfil:</strong></label>
-                <select id="type" name="type">
-                    <option value="perfil1">Jefe de Sala</option>
-                    <option value="perfil2">Integrante de Sala</option>
-                    <option value="perfil3">Sala Privada</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-save">Editar perfil</button>
-            <button type="button" id="cancelEdit" class="btn btn-nosave">Cerrar</button>
-        </form>
-    </div>
+    </form>
 </div>
 
 

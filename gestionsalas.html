@@ -61,8 +61,11 @@
                 </tbody>
             </table>
             <div class="add-location-container">
-                <button class="btn-add-location" id="newubi">Agregar Ubicación</button>
+                <button class="btn-add-location" id="newubi">
+                    <i class="fas fa-map-marker-alt me-2"></i> Agregar Ubicación
+                </button>
             </div>
+            
         </div>
     </div>
     
@@ -101,7 +104,7 @@
         </select>
         <br>
         <div class="confirmation-buttons">
-            <button type="button" class="btn btn-cancel" onclick="registrarUbicacion('POST')">Editar</button>
+            <button type="button" class="btn btn-cancel" onclick="registrarUbicacion('POST')">Editar Ubicación</button>
             <button type="button" class="btn btn-confirm btn-close-modal">Cancelar</button>
         </div>
     </form>
@@ -161,8 +164,7 @@
         <p><strong>Tipo de Perfil:</strong> <span id="profileType">Usuario</span></p>
         <br>
         <div class="confirmation-buttons">
-            <button type="submit" class="btn btn-cancel">Editar perfil</button>
-            <button type="button" class="btn btn-confirm btn-close-modal">Cancelar</button>
+            <button type="button" class="btn btn-confirm btn-close-modal">Cerrar</button>
         </div>
     </div>
     <div class="profile-edit" id="profileEdit" style="display: none;">
