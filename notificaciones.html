@@ -78,12 +78,12 @@
                         <td>1 pastilla</td>
                         <td>
 <!-- Botón de Confirmación (Verde) -->
-<button class="btn btn-success btn-sm confirm-btn" title="Confirmar">
+<button class="btn btn-success btn-sm confirm-btn" title="Confirmar" id="si_aplicacion">
     <i class="fas fa-check"></i> Aplicado
 </button>
 
 <!-- Botón de Negación (Rojo) -->
-<button class="btn btn-danger btn-sm cancel-btn" title="Cancelar">
+<button class="btn btn-danger btn-sm cancel-btn" title="Cancelar" id="no_aplicacion">
     <i class="fas fa-times"></i> No aplicado
 </button>
 
@@ -137,7 +137,10 @@
             <p><strong>Tipo de Perfil:</strong> <span id="profileType">Usuario</span></p>
             <br>
             <div class="confirmation-buttons">
-                <button type="button" class="btn btn-confirm btn-close-modal">Cerrar</button>
+                <button type="button" class="btn btn-confirm btn-close-modal">
+                    <i class="fas fa-times"></i>
+
+                </button>
             </div>
         </div>
     </div>
@@ -145,7 +148,7 @@
 
 <!-- Modal WhatsApp -->
 <div id="WhatsAppModal" class="confirmation-card">
-    <h5>¿Desea recibir notificaciones a 3218899964?</h5>
+    <h5>¿Desea enlazar sus notificaciones?</h5>
     <form>
         <div class="confirmation-buttons">
             <button type="button" class="btn btn-cancel" id="acceptWhatsApp">Aceptar</button>
@@ -154,8 +157,54 @@
     </form>
 </div>
 
+<!-- Modal observaciones confirm-->
+<div id="Observaciones_medicacionsi" class="confirmation-card">
+    <h5>Observaciones</h5>
+    <form>
+        <!-- Sección para los datos clínicos -->
+        <div class="mb-3">
+            <textarea id="observacionesTextarea" class="form-control" placeholder="Ingrese los detalles de este proceso de medicación (ej. motivos de retraso, reacciones)." rows="4" required></textarea>
+        </div>
+        <div class="confirmation-buttons">
+            <button type="submit" class="btn btn-cancel">Agregar observaciones</button>
+            <button type="button" class="btn btn-confirm btn-close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </form>
+</div>
 
 
+<script>
+    // Función para generación de fecha y hora
+    function updateDateTime() {
+        const now = new Date();
+
+        const day = now.getDate().toString().padStart(2, '0');
+        const month = (now.getMonth() + 1).toString().padStart(2, '0');
+        const year = now.getFullYear();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+
+        const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}`;
+
+        const textarea = document.getElementById('observacionesTextarea');
+        
+        if (textarea && !textarea.value) {
+            textarea.value = `${formattedDate} `;
+        }
+
+        textarea?.addEventListener('input', function() {
+            const datePrefix = `${formattedDate} `;
+            if (!textarea.value.startsWith(datePrefix)) {
+                textarea.value = datePrefix + textarea.value.slice(datePrefix.length);
+            }
+        });
+    }
+
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+</script>
 
       <link href="css/styles.css" rel="stylesheet">
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

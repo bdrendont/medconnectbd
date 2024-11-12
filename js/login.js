@@ -50,6 +50,16 @@ export function EnlaceWhatsApp() {
     document.getElementById('WhatsAppModal').style.display = 'block';
 } 
 
+// Modal Observaciones medicación
+export function ObervacionesMedicacion() {
+    document.getElementById('Observaciones_medicacionsi').style.display = 'block';
+} 
+
+// Modal nuevo medicamento
+export function NewMed() {
+    document.getElementById('NewMedicamentoModal').style.display = 'block';
+} 
+
 export function VerObservaciones(obs) {
     document.getElementById('Consolidadodeobservaciones').style.display = 'block';
     Consolidadodeobservaciones.innerHTML=`<h5>Observaciones</h5><p>${obs}</p><button type="button" id="cancelEdit" class="btn btn-nosave">Cerrar</button>`;

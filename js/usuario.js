@@ -22,7 +22,7 @@ export function registrarUsuario(method){
         param, 
         fSuccess: (resp)=>{
             if(resp.code === 200){
-                alert("La cuenta del usuario ("+alias+") fue creada correctamente")
+                alert("La cuenta fue creada correctamente")
                 link("index.html")
             }
             else {alert(resp.msg)}

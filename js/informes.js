@@ -14,7 +14,7 @@ export function listadoPacientesInformes(){
                     item += `<tr>
                               <td>${el.nombre_paciente}</td>
                               <td><button class="status-button active">Disponible</button></td>
-                              <td><button class="btn btn-download"><i class="fas fa-download"></i> Descargar</button></td>
+                              <td><button class="btn btn-download" id="ir_informe"><i class="fas fa-arrow-right"></i></button></td>
                             </tr>`;
                 });
                 $tinfo.children[1].innerHTML = item;

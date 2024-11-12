@@ -1168,3 +1168,111 @@ body {
     color: #F39C12; /* Cambia al color deseado al pasar el cursor */
 }
 
+/* Contenedor de búsqueda */
+.search-container {
+    position: relative;
+    width: 50%;        /* Ocupa el 50% del ancho del contenedor */
+    min-width: 200px;  /* Ancho mínimo */
+    max-width: 600px;  /* Ancho máximo */
+}
+
+#searchInput {
+    width: 100%;           /* Hace que ocupe todo el espacio disponible */
+    padding: 0.5rem 2rem;  /* Relleno a la derecha para dejar espacio para el icono */
+    padding-left: 1rem;    /* Añade un poco de espacio a la izquierda para evitar que toque el borde */
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;           /* Posiciona la lupa a la derecha */
+    top: 50%;              /* Centrado vertical */
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #2C3E50;        /* Color del icono */
+}
+
+.containerprint {
+    text-align: center; /* Centra el contenido horizontalmente */
+}
+
+#printButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-flex; /* Cambiado de 'flex' a 'inline-flex' para alinear solo el botón */
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#printButton i {
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+#printButton:hover {
+    opacity: 0.7;
+}
+
+
+
+
+
+
+
+
+
+/* Estilo para el interruptor (más pequeño) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;  /* Hacer más pequeño */
+    height: 20px; /* Hacer más pequeño */
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px; /* Hacer el círculo más pequeño */
+    width: 16px;  /* Hacer el círculo más pequeño */
+    border-radius: 50%;
+    left: 2px;    /* Ajustar el círculo */
+    bottom: 2px;  /* Ajustar el círculo */
+    background-color: white;
+    transition: 0.4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #4CAF50;  /* Verde cuando está activo */
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(20px);  /* Mover el círculo más cerca */
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  
+  

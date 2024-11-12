@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia Clínica</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-weight: bold;
+            font-size: 24px;
+            color: #2C3E50;
+        }
+
+        .header .date {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #34495e;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #2C3E50;
+            padding-bottom: 5px;
+        }
+
+        .section p {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .table th, .table td {
+            padding: 8px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        .table th {
+            background-color: #f2f2f2;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Hoja de Historia Clínica</h1>
+        <p class="date" id="currentDate"></p>
+    </div>
+
+    <!-- Datos del paciente -->
+    <div class="section">
+        <h2>Datos del Paciente</h2>
+        <p><strong>Nombre:</strong> Juan Pérez</p>
+        <p><strong>Ubicación:</strong> CAMILLA #16 URGENCIAS</p>
+    </div>
+
+    <!-- Observaciones Iniciales -->
+    <div class="section">
+        <h2>Datos de Ingreso</h2>
+        <p>Paciente de 30 años, llega con quejas de dolor en las articulaciones y fiebre leve. Su temperatura es de 38°C y su presión arterial es de 120/80 mmHg. Tiene antecedentes de artritis reumatoide y está en tratamiento con ácido fólico y metotrexato. No tiene alergias conocidas y su frecuencia cardíaca es de 85 latidos por minuto.</p>
+    </div>
+
+    <!-- Encargado -->
+    <div class="section">
+        <h2>Encargado de la Historia Clínica</h2>
+        <p><strong>Nombre del encargado:</strong> Brigni Dahiana Rendón Toro</p>
+        <p><strong>Identificación</strong> 1041440228</p>
+        <p><strong>Teléfono:</strong> +57 987 654321</p>
+        <p><strong>Correo Electrónico:</strong> brigni@example.com</p>
+    </div>
+
+    <!-- Historial de Medicación -->
+    <div class="section">
+        <h2>Programador de Medicación</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Medicamento</th>
+                    <th>Vía de suministro</th>
+                    <th>Dosis</th>
+                    <th>Cantidad de aplicaciones</th>
+                    <th>Intervalo de aplicación (horas)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Paracetamol</td>
+                    <td>Oral</td>
+                    <td>1 pastilla</td>
+                    <td>8</td>
+                    <td>4</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Encargado -->
+    <div class="section">
+        <h2>Historial de medicación</h2>
+        <p><strong>11/11/2024 08:00:</strong> Aplicación de Medicamento<br>
+            Medicamento: Paracetamol 500 mg<br>
+            Observaciones: Medicamento administrado correctamente. El paciente no presentó ninguna reacción adversa ni efectos secundarios. El nivel de dolor reportado fue mínimo.</p>
+            
+            <p><strong>11/11/2024 10:00:</strong> Aplicación de Medicamento<br>
+            Medicamento: Paracetamol 500 mg<br>
+            Observaciones: Medicamento administrado con éxito. El paciente mostró signos de mejoría, aunque todavía presenta leves molestias. No se observaron efectos secundarios.</p>
+            
+            <p><strong>11/11/2024 12:00:</strong> Aplicación de Medicamento<br>
+            Medicamento: Paracetamol 500 mg<br>
+            Observaciones: La aplicación se retrasó por 30 minutos debido a una reprogramación de la agenda. El paciente no manifestó incomodidad por el retraso, pero indicó sensación de leve malestar. Se monitoreó el dolor, el cual se mantenía bajo control.</p>
+            
+            <p><strong>11/11/2024 15:00:</strong> Aplicación de Medicamento<br>
+            Medicamento: Paracetamol 500 mg<br>
+            Observaciones: No se administró a la hora programada. Se pospuso hasta las 15:00 por una consulta médica urgente. El paciente expresó leve incomodidad debido al retraso, pero la medicación fue bien tolerada y no hubo efectos adversos inmediatos.</p>
+            
+            <p><strong>11/11/2024 16:00:</strong> Aplicación de Medicamento<br>
+            Medicamento: Paracetamol 500 mg<br>
+            Observaciones: Medicamento administrado sin contratiempos. El paciente reportó una mejoría en el dolor y se mostró más relajado. No se presentaron efectos adversos. Continuar con monitoreo.</p>
+            
+            <p><strong>11/11/2024 18:00:</strong> Aplicación de Medicamento<br>
+            Medicamento: Paracetamol 500 mg<br>
+            Observaciones: Se administró con un retraso de 30 minutos debido a la reprogramación de la agenda. El paciente se quejó de molestias menores por la demora, pero el medicamento fue bien recibido y el dolor continuó bajo control.</p>
+            
+            <p><strong>11/11/2024 20:00:</strong> Aplicación de Medicamento<br>
+            Medicamento: Paracetamol 500 mg<br>
+            Observaciones: Medicamento administrado correctamente, sin reacciones adversas. El paciente sigue en recuperación y se encuentra más tranquilo. El dolor ha disminuido significativamente desde la primera dosis.</p>
+            
+            <p><strong>11/11/2024 22:00:</strong> Aplicación de Medicamento<br>
+            Medicamento: Paracetamol 500 mg<br>
+            Observaciones: La administración fue puntual. El paciente reportó sentirse mucho mejor y sin molestias. No hubo reacciones adversas a esta dosis.</p>
+                       
+    </div>
+
+    <div class="containerprint">
+        <button id="printButton">
+            <i class="fas fa-print"></i> Imprimir
+        </button>
+    </div>
+    
+</div>
+
+<script>
+    // Función para abrir el cuadro de diálogo de impresión
+    document.getElementById('printButton').addEventListener('click', function() {
+        window.print(); 
+    });
+</script>
+
+<link href="css/styles.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <script src="js/script.js" type="module"></script>
+
+</body>
+</html>

@@ -165,10 +165,10 @@
 
 <!-- Modal de Medicamentos -->
 <div id="ProgramadorMedicamentosPaciente" class="confirmation-card">
-    <h5>Programación de medicación del paciente</h5>
+    <h5>Programador</h5>
 
     <div class="table-responsive mt-3">
-        <table class="table">
+        <table class="table" id="medicamentosTable">
             <thead>
                 <tr>
                     <th>Nombre del Medicamento</th>
@@ -187,19 +187,21 @@
                     <td>4</td>
                 </tr>
                 <tr>
-                    <td>Acetaminofén</td>
+                    <td>Ibuprofeno</td>
                     <td>Oral</td>
                     <td>1 pastilla</td>
-                    <td>12</td>
-                    <td>4</td>
+                    <td>10</td>
+                    <td>6</td>
                 </tr>
             </tbody>
         </table>
     </div>
     <br>
-    <button type="submit" class="btn btn-save" id="AgregarMedicamento">Agregar medicamento</button>
+    <button type="button" class="btn btn-save" id="AgregarMedicamento">Agregar medicamento</button>
     <button type="button" id="cancelEdit" class="btn btn-nosave">Cerrar</button>
 </div>
+
+
 
 <!-- Modal de Observaciones -->
 <div id="Consolidadodeobservaciones" class="confirmation-card"> </div>
@@ -207,17 +209,22 @@
 <!-- Modal Nuevo Usuario -->
 <div id="NewPacienteModal" class="confirmation-card">
     <h5>Agregar Paciente</h5>
-    <form>
-            <div class="mb-3">
-                <input type="text" name="nombre_paciente" class="form-control" placeholder="Ingrese el nombre del paciente" required>
-            </div>
-            <select name="ubicacion" class="form-control" required>
-                <option value="Disponible">UCI</option>
-                <option value="No disponible">URGENCIAS</option>
-            </select>
-            <br>
-            <button type="button" class="btn btn-cancel">Agregar Paciente</button>
-            <button type="button" id="cancelEdit" class="btn btn-nosave">Cancelar</button>
+    <form id="form-new-paciente">
+        <div class="mb-3">
+            <input type="text" name="nombre_paciente" class="form-control" placeholder="Ingrese el nombre del paciente" required>
+        </div>
+        <select name="ubicacion" class="form-control" required>
+            <option value="">A</option>
+            <option value="">A</option>
+        </select>
+        <br>
+        <div class="mb-3">
+            <textarea name="datos_clinicos" class="form-control" placeholder="Ingrese los datos de ingreso del paciente (ej. enfermedades previas, alergias, tratamientos)" rows="4" required></textarea>
+        </div>
+        <div class="confirmation-buttons">
+            <button type="submit" class="btn btn-cancel">Agregar paciente</button>
+            <button type="button" class="btn btn-confirm btn-close-modal">Cancelar</button>
+        </div>
     </form>
 </div>
 
@@ -238,7 +245,8 @@
         <p><strong>Tipo de Perfil:</strong> <span id="profileType">Usuario</span></p>
         <br>
         <div class="confirmation-buttons">
-            <button type="button" class="btn btn-confirm btn-close-modal">Cerrar</button>
+            <button type="button" class="btn btn-confirm btn-close-modal"><i class="fas fa-times"></i>
+            </button>
         </div>
     </div>
     <div class="profile-edit" id="profileEdit" style="display: none;">
