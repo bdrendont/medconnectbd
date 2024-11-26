@@ -36,10 +36,6 @@ export function listadoPacientes(){
 </div>`;
 i++;
 
-
-
-
-
                 });
                 $div.innerHTML = item;
             } else $div.innerHTML = `<tr><td colspan='2' class='text-center'><div>${resp.msg}</div></td></tr>`;

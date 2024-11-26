@@ -68,7 +68,6 @@ document.addEventListener('click', (e) => {
     if (e.target.matches("#btnExit")) salida()
     
         
-
     // Abrir editar ubicación
     const button = e.target.closest(".sala_upd");
     if (button) modalEditarSala(button);
